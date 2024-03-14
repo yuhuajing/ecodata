@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <title>数据上链</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/webbase.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pages-register.css"/>
+    <style type="text/css">
+        .code-span {
+            display: inline-block;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 35px;
+            width: 118px;
+            height: 35px;
+            float: right;
+            margin-left: 10px
+        }
+        .code-span:hover{
+            background-color: #c0ccda;
+        }
+    </style>
+
+    <style>
+        .uuid-label {
+            white-space: nowrap; /* 防止换行 */
+            overflow: hidden;    /* 隐藏溢出部分 */
+            text-overflow: ellipsis; /* 使用省略号表示溢出部分 */
+        }
+    </style>
+</head>
+
+<body>
+
+
+<div class="zhucebox">
+    <div class="register mainregister py-container ">
+        <div class="zhucetab">
+            <!--            <a class="active">-->
+            <!--                <img src="img/reginster/qiye-g.png">-->
+            <!--                企业账户注册-->
+            <!--            </a>-->
+            <a>
+                <img src="img/reginster/gren-b.png">
+                数据上链
+            </a>
+
+        </div>
+
+        <!--register-->
+        <div class="registerArea" id="registerApp">
+
+            <div class="info" style="width: 650px">
+                <form method="POST"  class="sui-form form-horizontal" onsubmit="submitForm(event)">
+                    <div class="control-group">
+                        <label class="control-label">Id：</label>
+                        <div class="controls">
+                            <label id="uuidLabel" name="id" class="control-label uuid-label"> xx </label>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">水质状况：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入水质状况" class="input-xfat input-xlarge"
+                                   v-model.lazy="user.username" name="waterdata" data-vv-as="用户名">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">二氧化碳数据：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="Co2" class="input-xfat input-xlarge"
+                                   v-model="user.password" name="codata" data-vv-as="密码">
+                        </div>
+                        <!--                        <span style="color: red;">{{ errors.first('password') }}</span>-->
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">生态数据：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="ecodata" class="input-xfat input-xlarge"
+                                   v-model="user.confirmPassword" name="ecodata" data-vv-as="确认密码">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label">操作人：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="操作人" class="input-xfat input-xlarge"
+                                   v-model="user.confirmPassword" name="operator" data-vv-as="确认密码">
+                        </div>
+                    </div>
+                    <div class="controls btn-reg">
+                        <input class="sui-btn btn-block btn-xlarge btn-danger" type="submit" value="数据上链" />
+                    </div>
+                </form>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script>
+    // 生成 UUID
+    function generateUUID() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random() * 16 | 0,
+                v = c === 'x' ? r : (r & 0x3 | 0x8);
+            return v.toString(16);
+        });
+    }
+
+    // 获取元素并替换文本内容
+    var uuidLabel = document.getElementById('uuidLabel');
+    if (uuidLabel) {
+        uuidLabel.textContent = generateUUID();
+    }
+</script>
+
+<script>
+    function submitForm(event) {
+        alert("Please waiting，Data is send On-Chain!!!");
+        //console.log(123)
+        event.preventDefault(); // 阻止表单默认提交行为
+        var form = event.target; // 获取表单元素
+        var formData = new FormData(form);
+        fetch('/addecodata', {
+            method: 'POST',
+            body: formData
+        }).then(function(response) {
+            if (response.ok) {
+                response.json().then(function(data) {
+                    var hash = data.data;
+                    alert("On-Chain successfully with hash: " + hash);
+                    window.location.href = '/adminfuncs.html';
+                });
+            } else {
+                alert("On-Chain failed, 链拥堵，请稍后再试！！");
+                window.location.reload(); // 刷新当前页面
+            }
+        })
+            .catch(function(error) {
+            });
+    }
+</script>
+
+</body>
+
+</html>

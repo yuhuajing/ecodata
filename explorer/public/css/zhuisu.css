@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.bg{
+    background: #f0f3ef;
+}
+.banner{
+    width: 100%;
+}
+.banner img{
+    width: 100%;
+
+}
+.name{
+    width: 100%;
+    height: 50px;
+    background: url("../img/liantiao-b.png");
+    font-size: 12px ;
+    color: #886104;
+    text-align: center;
+    overflow: hidden;
+}
+.line{
+    border-bottom: 1px solid #ddd;
+    width: 80%;
+    height: 25px;
+    margin: 0 auto;
+}
+.line span{
+    display: inline-block;
+    margin-top: 14px;
+    background: #fff7ec;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.code{
+    font-size: 12px;
+    color:#999999;
+    height: 25px;
+    line-height: 28px;
+}
+.z1{
+    background-size: 100%;
+    width: 94%;
+    margin: 10px auto;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.up{
+    background: url(../img/up.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    float: right;
+}
+.donw{
+    background: url(../img/down.png);
+    background-size: 100% 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    float: right;
+}
+.titlename{
+    font-size: 15px;
+    font-weight: 700;
+}
+.icon{
+    display: inline-block;
+    margin: 0 7px;
+
+}
+.icon img{
+    width: 20px ;
+    height: 20px;
+    vertical-align: middle;
+}
+.title{
+    height: 30px;
+    background: #408630;
+    border-radius: 5px;
+    line-height: 30px;
+    color: #fff;
+}
+.atur{
+    width: 100%;
+    overflow: hidden;
+}
+.atur span{
+    display: inline-block;
+}
+.attubox{
+    padding: 20px;
+    position: relative;
+}
+.attuname{
+    font-size:12px ;
+    font-weight: 700;
+width: 20%;
+}
+.attunvalue{
+    font-size:12px ;
+}
+.baogao{
+    background: #7bb544;
+    width: 150px;
+    height: 30px;
+    font-size: 12px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 20px;
+
+}
+.footer{
+    height: 60px;
+    text-align: center;
+    font-size: 12px;
+    background: #468036;
+    color: #fff;
+    padding-top: 5px;
+}
+.footer p{
+    margin: 0 ;
+    line-height: 25px;
+}
+.comname{
+    font-size: 12px;
+    font-weight: 700;
+    float: left;
+    width: 23%;
+}
+.comintro{
+    font-size: 12px;
+    float: left;
+    width: 75%;
+
+}
+.navbox{
+    overflow: hidden;
+    width: 94%;
+    margin: 0 auto;
+}
+.navlist{
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    text-align: center;
+    float: left;
+    width: 15.5%;
+    font-size: 10px;
+    height: 60px;
+    padding: 5px 0;
+    margin: 10px 0;
+    margin-right: 1%;
+}
+.navlist img{
+    width: 25px;
+}
+.navlist p{
+    padding-top: 8px;
+    color: #333;
+}
+.huanjiebox{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.huanjielist{
+    overflow: hidden;
+    margin-top: 34px;
+
+}
+.huanjielistL{
+    text-align: center;
+    float: left;
+    width: 19%;
+}
+.huanjielistL img{
+    width: 60px;
+    height: 60px;
+}
+.huanjielistR{
+    float: left;
+    width: 70%;
+    background: url("../zsimg/huanjiebotom.png") no-repeat;
+    background-size: contain;
+    height: 138px;
+    padding-left: 25px;
+    margin-top: 16px;
+}
+.yuanname{
+    font-weight: 700;
+    color: #fff;
+    height: 30px;
+    line-height:24px;
+    font-size: 14px;
+}
+.dianname{
+    font-size: 14px;
+    color: #000000;
+}
+.productname{
+    margin-top: 6px;
+}
+.productname p{
+    margin: 0 ;
+    padding: 0;
+    font-size: 10px;
+    line-height: 22px;
+}
+.jiantou{
+    text-align: center;
+    width: 15%;
+}
+.jiantou img{
+    width: 24px;
+    height: 540px;
+}
+.huanjiecon{
+    height: 580px;
+}
+.companyimgbox{
+    width: 100%;
+    overflow: hidden;
+}
+.companyimg{
+    width: 47%;
+    margin-top: 10px;
+    float: left;
+    padding: 10px;
+}
+.companyimg img{
+    width: 100%;
+}

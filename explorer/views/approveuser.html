@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/webbase.css">
+    <link rel="stylesheet" href="css/center.css">
+    <link rel="stylesheet" href="css/pages-seckillrder.css">
+
+</head>
+<body>
+
+<div class="midnav">
+    <div class="main">
+        <div class=" centerlogo">
+            <!--            <img src="img/logo-g.png">-->
+        </div>
+        <div class="topR centernaver">
+            <ul>
+                <li>
+                    <a href="">首页</a>
+                </li>
+                <li>
+                    <a href="">用户管理</a>
+                    <div class="erji">
+                        <a href="/approveuser">全部用户</a>
+                        <a href="">授权用户</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="">数据管理</a>
+                    <div class="erji">
+                        <a href="">查看数据</a>
+                        <a href="">上传数据</a>
+                        <a href="">更新数据</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--        <div class="gwcbtn">-->
+        <!--            <a>-->
+        <!--                <img src="img/car-gray.png">-->
+        <!--                购物车结算<i>11</i>-->
+        <!--            </a>-->
+        <!--        </div>-->
+    </div>
+</div>
+<div class="cneterbox">
+    <div class="main">
+        <div class="centerboxL">
+            <ul>
+                <p>个人信息</p>
+                <li>
+                    <a href="/adminfuncs.html">个人数据</a>
+                    <a href="/updateAdminUser.html">更新个人数据</a>
+                </li>
+            </ul>
+            <ul>
+                <p>用户管理</p>
+                <li>
+                    <a href="/approveuser">授权用户</a>
+                    <a href="">管理用户</a>
+                </li>
+            </ul>
+            <ul>
+                <p>数据管理</p>
+                <li>
+                    <a href="/getchaindata">查看数据</a>
+                    <a href="/adddata.html">上传数据</a>
+                </li>
+            </ul>
+        </div>
+        <div class="centerboxR">
+            <div class="main order-pay">
+                <div class="body">
+                    <div class="table-title">
+                        <table class="sui-table  order-table">
+                            <tbody><tr>
+                            </tr></tbody><thead>
+                        <tr><th width="35%">用户ID</th>
+                            <th width="5%">用户名</th>
+                            <th width="5%">Email</th>
+                            <th width="8%">Phone</th>
+                            <th width="10%">身份</th>
+                            <th width="10%">授权信息</th>
+                            <th width="10%">操作</th>
+                        </tr></thead>
+
+                        </table>
+                    </div>
+                    <div class="order-detail">
+                        <div class="choose-title">
+                            <label data-toggle="checkbox" class="checkbox-pretty ">
+                                <input type="checkbox" checked="checked"><span>全部用户</span>
+                            </label>
+                        </div>
+                        <table class="sui-table table-bordered order-datatable">
+                            <tbody>
+                            {{ range .Data }}
+                            <tr>
+                                <td width="35%">
+                                    <span  class="guige"> </span>
+                                    {{ .Id }}
+                                </td>
+                                <td width="5%"  class="center">
+                                    {{ .Username }}
+                                </td>
+                                <td width="5%"  class="center">
+                                    {{ .Email }}
+                                </td>
+                                <td width="8%"   class="center">
+                                    {{ .Phone }}
+                                </td>
+                                <td width="10%"   class="center">
+                                    {{ .Identity }}
+                                </td>
+                                <td width="10%"   class="center">
+                                    {{ .Approved }}
+                                </td>
+                                <td width="10%" class="center">
+                                    <ul class="unstyled">
+                                        <li>
+                                            <form method="POST" action="/giveapprove?id={{ .Id }}" class="sui-form form-horizontal" onsubmit="submitFormApprove(event)">
+                                                <p><span> <input type="submit" value="授权用户" /></span></p>
+                                            </form>
+                                        </li>
+                                        <li>
+                                            <form method="POST" action="/removeapprove?id={{ .Id }}" class="sui-form form-horizontal" onsubmit="submitFormDelete(event)">
+                                            <p><span> <input type="submit" value="删除用户" /></span></p>
+                                            </form>
+                                        </li>
+
+                                    </ul>
+                                </td>
+                            </tr>
+                            {{ end }}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="foot1">
+    <div class="main">
+        <div class="footblank">
+            <div class="footblanklist">
+                <img src="">
+                <p class="footblank1">
+
+                </p>
+                <p class="footblank2"></p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/zhen.png">
+                <p class="footblank1">
+                    真品货源
+                </p>
+                <p class="footblank2">正品、优质、放心</p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/tong.png">
+                <p class="footblank1">
+                    数据互通
+                </p>
+                <p class="footblank2">生态数据</p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/yi.png">
+                <p class="footblank1">
+                    数据不可篡改
+                </p>
+                <p class="footblank2">区块链默克尔树、密码学</p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/danbaojiaoyi.png">
+                <p class="footblank1">
+                    区块链溯源
+                </p>
+                <p class="footblank2">交易哈希、区块高度溯源</p>
+            </div>
+        </div>
+        <div class="frendlink">
+            <div class="frendlinkl">
+                <div class="footlinkbox">
+                    <p>区块链</p>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/115465777">区块链出块机制</a>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/115803249">区块链数据存储</a>
+                    <a href="https://blog.csdn.net/weixin_41303815/category_11139294.html?spm=1001.2014.3001.5482">密码学</a>
+                </div>
+                <div class="footlinkbox">
+                    <p>区块链浏览器</p>
+                    <a href="">区块高度</a>
+                    <a href="">区块信息</a>
+                    <a href="">交易信息</a>
+                </div>
+                <div class="footlinkbox">
+                    <p>智能合约</p>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/119328874">上链合约</a>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/119328874">查询合约</a>
+                </div>
+                <div class="footlinkbox">
+                    <p>帮助中心</p>
+                    <a href="">联系我们</a>
+                    <a href="https://blog.csdn.net/weixin_41303815">更多资料</a>
+                </div>
+            </div>
+            <div class="frendlinkm"></div>
+            <div class="frendlinkr">
+                <p  class="call"><img src="img/call.png"><span>xxx-xxxx-xxxx</span></p>
+                <p class="email"><img src="img/email.png"><span >xxxx@163.com</span></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background: #acacac">
+
+<script>
+    function submitFormApprove(event) {
+        event.preventDefault(); // 阻止表单默认提交行为
+
+        // 获取表单元素的值
+        var form = event.target;
+        var id = form.getAttribute('action').split('=')[1];
+
+        // 在此处进行其他表单数据处理或验证
+
+        // 发起 POST 请求
+        fetch('/giveapprove?id=' + id, {
+            method: 'POST',
+            // 可以根据需要设置请求头等其他参数
+        })
+            .then(response => {
+                // 处理响应
+                if (response.ok) {
+                    alert("Approve successfully!!! ");
+                    // 成功处理逻辑
+                    window.location.reload(); // 刷新当前页面
+                } else {
+                    // 失败处理逻辑
+                    alert('Failed to give approval.');
+                    window.location.reload(); // 刷新当前页面
+                }
+            })
+            .catch(error => {
+                // 处理错误
+                console.error('An error occurred:', error);
+            });
+    }
+</script>
+<script>
+    function submitFormDelete(event) {
+        event.preventDefault(); // 阻止表单默认提交行为
+
+        // 获取表单元素的值
+        var form = event.target;
+        var id = form.getAttribute('action').split('=')[1];
+
+        // 在此处进行其他表单数据处理或验证
+
+        // 发起 POST 请求
+        fetch('/giveapprove?id=' + id, {
+            method: 'POST',
+            // 可以根据需要设置请求头等其他参数
+        })
+            .then(response => {
+                // 处理响应
+                if (response.ok) {
+                    alert("Delete successfully!!! ");
+                    // 成功处理逻辑
+                    window.location.reload(); // 刷新当前页面
+                } else {
+                    // 失败处理逻辑
+                    alert('Failed to give approval.');
+                }
+            })
+            .catch(error => {
+                // 处理错误
+                console.error('An error occurred:', error);
+            });
+    }
+</script>
+<script type="text/javascript">
+    //banner左侧内容栏
+    $(function() {
+        var thisTime;
+        //鼠标离开左侧内容栏
+        $('.cat_wrap .cat_list .float').mouseleave(function(even) {
+            thisTime = setTimeout(thisMouseOut, 1000);
+        });
+        //鼠标点击左侧内容栏   滑动出弹层
+        $('.cat_wrap .cat_list .float').mouseenter(function() {
+            $(this).addClass("active").siblings().removeClass("active");
+            clearTimeout(thisTime);
+            var thisUB = $('.cat_wrap .cat_list .float').index($(this));
+            if ($.trim($('.cat_subcont .cat_sublist').eq(thisUB).html()) != "") {
+                $('.cat_subcont').addClass('active');
+                $('.cat_sublist').hide();
+                $('.cat_sublist').eq(thisUB).show();
+            } else {
+                $('.cat_subcont').removeClass('active');
+            }
+        });
+        //函数——执行鼠标离开左侧内容栏的动作
+        function thisMouseOut() {
+            $('.cat_subcont').removeClass('active');
+            $('.cat_wrap .cat_list .float').removeClass('active');
+        }
+        $('.cat_subcont').mouseenter(function() {
+            clearTimeout(thisTime);
+            $('.cat_subcont').addClass('active');
+        });
+        $('.cat_subcont').mouseleave(function() {
+            $('.cat_subcont').removeClass('active');
+            $('.cat_wrap .cat_list .float').removeClass('active');
+        });
+    });
+</script>
+<script>
+    $(function() {
+        // $(".shaixuan-tj span.crumb-select-item").live('hover',function(event){
+        //     if(event.type=='mouseenter'){
+        //         $(this).addClass("crumb-select-itemon");
+        //     }else{
+        //         $(this).removeClass("crumb-select-itemon");
+        //     }
+        // });
+        // $(".shaixuan-tj span.crumb-select-item").live('click', function(event){
+        //     event.preventDefault();
+        //     // $(this).remove();
+        //     var TTR = $(this).find("em").text();
+        //     $(".show-con a").each(function(){
+        //         var TT = $(this).text();
+        //         THI = $(this);
+        //         THIPP = $(this).parents("dl");
+        //         if(TTR==TT){
+        //             THI.removeClass("nzw12");
+        //             THIPP.css("display","block");
+        //         }
+        //     })
+        // });
+        // $(".show-con a").click(function(event){
+        //     event.preventDefault();
+        //     THIP = $(this).parents("dl");
+        //     if($(this).hasClass("nzw12")){
+        //     }else{
+        //         $(this).addClass("nzw12");
+        //         var zhiclass = $(this).parents("dd").siblings("dt").find("a").text();
+        //         zhicon = $(this).text();
+        //         tianjaneir="<span class='crumb-select-item'><a href='/'><b>"+zhiclass+"</b><em>"+zhicon+"</em><i class='icon-remove'></i></a></span>"
+        //         $(".shaixuan-tj").children().last().after(tianjaneir);
+        //         THIP.css("display","none");
+        //     }
+        // });
+        $(".show-more").click(function(event) {
+            event.preventDefault();
+            var ticon = $(this).find("i");
+            tspan = $(this).find("span");
+            if ($(this).hasClass("zk")) {
+                $(this).siblings(".show-con").css("height", "30px");
+                ticon.removeClass("icon-angle-up");
+                ticon.addClass("icon-angle-down");
+                tspan.html("更多");
+                $(this).removeClass("zk")
+            } else {
+                $(this).siblings(".show-con").css("height", "auto");
+                ticon.removeClass("icon-angle-down");
+                ticon.addClass("icon-angle-up");
+                tspan.html("收起");
+                $(this).addClass("zk")
+            }
+        });
+        // $("#sxbtn").click(function(event){
+        //     event.preventDefault();
+        //     var xicon = $(this).find("span i");
+        //     xspan = $(this).find("span em");
+        //     if($(this).hasClass("zkon")){
+        //         xspan.text("收起筛选");
+        //         xicon.removeClass("icon-angle-down");
+        //         xicon.addClass("icon-angle-up");
+        //         $(".sxcon").slideDown();
+        //         $(this).removeClass("zkon")
+        //     }else{
+        //         xspan.text("查看筛选");
+        //         xicon.removeClass("icon-angle-up");
+        //         xicon.addClass("icon-angle-down");
+        //         $(".sxcon").slideUp();
+        //         $(this).addClass("zkon")
+        //     }
+        // })
+
+    })
+</script>
+</body>
+</html>

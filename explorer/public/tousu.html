@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <title>药品追溯--投诉页面</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/webbase.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pages-register.css"/>
+    <style type="text/css">
+        .code-span {
+            display: inline-block;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 35px;
+            width: 118px;
+            height: 35px;
+            float: right;
+            margin-left: 10px
+        }
+        .code-span:hover{
+            background-color: #c0ccda;
+        }
+    </style>
+</head>
+<body>
+<div class="zhucebox">
+    <div class="register mainregister py-container ">
+        <div class="registerArea" id="registerApp">
+            <div class="info" style="width: 650px">
+                <form method="POST" action="/tousu" class="sui-form form-horizontal" onsubmit="submitForm(event)">
+                    <div class="control-group">
+                        <label class="control-label">邮箱：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入邮箱" class="input-xfat input-xlarge"
+                                   v-model.lazy="user.username" name="email" data-vv-as="用户名"
+                                   v-validate="'required|alpha_dash|min:4|max:30|useful:1'">
+                        </div>
+                        <span style="color: red;"></span>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">投诉：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="输入投诉" class="input-xfat input-xlarge"
+                                   v-model="user.password" name="tousu" data-vv-as="密码"
+                                   v-validate="'required|alpha_dash|min:4|max:30'">
+                        </div>
+                        <span style="color: red;"></span>
+                    </div>
+                    <div class="setting">
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls btn-reg">
+                            <input type="submit" value="投诉" />
+                        </div>
+                    </div>
+                </form>
+                <script>
+                    function submitForm(event) {
+                        event.preventDefault(); // 阻止表单默认提交行为
+                        var form = event.target; // 获取表单元素
+                        var formData = new FormData(form);
+                        fetch('/tousu', {
+                            method: 'POST',
+                            body: formData
+                        }).then(function(response) {
+                            if (response.ok) {
+                                // 请求成功，根据状态码进行跳转
+                                if (response.status === 200) {
+                                    window.location.href = '/success.html'; // 成功跳转页面
+                                }
+                            } else {
+                                response.json().then(function(data) {
+                                    var queryParams = new URLSearchParams(data).toString();
+                                    window.location.href = '/error.html?' + queryParams;
+                                });
+                            }
+                        })
+                            .catch(function(error) {
+                            });
+                    }
+                </script>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

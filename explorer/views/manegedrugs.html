@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>药品管理</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/webbase.css">
+    <link rel="stylesheet" href="css/center.css">
+    <link rel="stylesheet" href="css/pages-seckillrder.css">
+
+</head>
+<body>
+
+<div class="cneterbox">
+    <div class="main">
+            <div class="main order-pay">
+                <div class="body">
+                    <div class="table-title">
+                        <table class="sui-table  order-table">
+                            <tbody><tr>
+                            </tr></tbody><thead>
+                        <tr>
+                            <th width="5%">追溯码</th>
+                            <th width="23%">生产信息</th>
+                            <th width="23%">仓储信息</th>
+                            <th width="23%">物流信息</th>
+                            <th width="23%">分销信息</th>
+                        </tr></thead>
+                        </table>
+                    </div>
+                    <div class="order-detail">
+                        <div class="orders">
+
+                            <table class="sui-table table-bordered order-datatable">
+                                <tbody>
+                                {{ range .Data }}
+                                <tr>
+                                    <td width="5%">
+                                        <span class="guige">{{ .TraceID }}</span>
+                                    </td>
+                                    <td width="20%" class="center">
+                                        {{ .ProdBaseInfo }}
+                                        <span><a href="updateProdInfo.html?id={{ .TraceID}}">更新生产数据</a></span>
+<!--                                        <form method="POST" action="/updateProdData?id={{ .TraceID }}" class="sui-form form-horizontal" onsubmit="submitForm(event)">-->
+<!--                                            <p><span> <input type="submit" value="更新生产数据" /></span></p>-->
+<!--                                        </form>-->
+                                    </td>
+                                    <td width="20%" class="center">
+                                        {{ .StoreBaseInfo }}
+                                        <span><a href="updateStoreInfo.html">更新仓储数据</a></span>
+<!--                                        <form method="POST" action="/updateStoreData?id={{ .TraceID }}" class="sui-form form-horizontal" onsubmit="submitForm(event)">-->
+<!--                                            <p><span> <input type="submit" value="更新仓储数据" /></span></p>-->
+<!--                                        </form>-->
+                                    </td>
+                                    <td width="20%" class="center">
+                                        {{ .LogisBaseInfo }}
+                                        <span><a href="updateLogisInfo.html">更新物流数据</a></span>
+<!--                                        <form method="POST" action="/updateLogisData?id={{ .TraceID }}" class="sui-form form-horizontal" onsubmit="submitForm(event)">-->
+<!--                                            <p><span> <input type="submit" value="更新物流数据" /></span></p>-->
+<!--                                        </form>-->
+                                    </td>
+                                    <td width="20%" class="center">
+                                        {{ .SaleBaseInfo }}
+                                        <span><a href="updateSaleInfo.html">更新分销数据</a></span>
+<!--                                        <form method="POST" action="/updateSalesData?id={{ .TraceID }}" class="sui-form form-horizontal" onsubmit="submitForm(event)">-->
+<!--                                            <p><span> <input type="submit" value="更新分销数据" /></span></p>-->
+<!--                                        </form>-->
+                                    </td>
+                                </tr>
+                                {{ end }}
+                                </tbody>
+                            </table>
+                            <!--order2-->
+
+
+                            <!--order3-->
+                        </div>
+
+
+                        <div class="clearfix"></div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+</div>
+
+</body>
+</html>

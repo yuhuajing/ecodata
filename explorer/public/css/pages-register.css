@@ -1,0 +1,145 @@
+.logoArea {
+	height: 78px;
+	/* border-bottom: 2px solid #c81523 */
+}
+
+.logo {
+	background: url(../img/logo-g.png) no-repeat  0 center;
+	width: 100%;
+	height: 55px;
+	margin: 13px auto;
+	position: absolute;
+}
+
+.registerArea {
+	margin: 0;
+	border-top: 1px solid #239c57;
+	font-family: "微软雅黑";
+}
+
+.registerArea h3 {
+	background: #ececec;
+	margin: 0;
+	padding: 6px 15px;
+	color: #333;
+	border-bottom: 1px solid #dfdfdf
+}
+
+h3 .go {
+	font-size: 14px;
+	float: right
+}
+
+.btn-reg {
+	width: 270px
+}
+
+.info {
+	width: 600px;
+	margin: 40px auto;
+	margin-left: 319px;
+}
+
+.control-label {
+	font-size: 14px
+}
+
+.sui-form input[type=text].input-xfat.input-xlarge, .sui-form input[type=password].input-xfat.input-xlarge
+{
+	width: 250px;
+	border-radius: 0;
+	border: 1px solid #999;
+	height: 24px
+}
+
+.sui-form .control-group label {
+	*display: inline;
+	*zoom: 1;
+	*float: left
+}
+
+#submit {
+	padding: 5px 80px;
+	font-family: "微软雅黑";
+	background-color: #c81523
+}
+
+.reg {
+	width: 221px
+}
+
+.zhuce {
+	*width: 221px;
+	float: right
+}
+
+.register{
+	overflow: hidden;
+}
+.btn-danger {
+	background-color: #239c57;
+	padding: 6px;
+	border-radius: 0;
+	border: 0;
+	font-size: 16px;
+	font-family: 微软雅黑;
+	word-spacing: 4px;
+}
+
+.copyright {
+	text-align: center;
+	line-height: 24px
+}
+
+.copyright ul li {
+	list-style-type: none;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	border-right: 1px solid #e4e4e4;
+	padding: 0 20px;
+	margin: 15px 0
+}
+
+.copyright ul li:last-child {
+	border-right: 0
+}
+.zhucebox{
+	background: url("../img/reginster/zhucebg.jpg") no-repeat;
+	background-size: 100% 100%;
+	padding-top: 56px;
+}
+.zhucetab{
+
+	text-align: center;
+
+	/* height: 40px; */
+
+	line-height: 53px;
+}
+.zhucetab a{
+
+	font-size: 16px;
+
+	color: #000;
+
+	margin: 0 17px;
+
+	height: 56px;
+
+	display: inline-block;
+}
+.zhucetab a.active{
+
+	color: #239c57;
+
+	font-weight: 700;
+
+	background: url("../img/reginster/jiantou.png") no-repeat center 47px;
+}
+.mainregister{
+
+	background: #fff;
+
+	border-radius: 20px;
+}

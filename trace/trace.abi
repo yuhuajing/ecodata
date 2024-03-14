@@ -1,0 +1,128 @@
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "ecode",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "codata",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "operator",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "waterdata",
+				"type": "string"
+			}
+		],
+		"name": "addOrupdateProdData",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"name": "tracedata",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "ecode",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "codata",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "operator",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "waterdata",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "id",
+				"type": "string"
+			}
+		],
+		"name": "tracedataById",
+		"outputs": [
+			{
+				"components": [
+					{
+						"internalType": "string",
+						"name": "ecode",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "codata",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "operator",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "waterdata",
+						"type": "string"
+					}
+				],
+				"internalType": "struct EcoTrace.EcoInfo",
+				"name": "",
+				"type": "tuple"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]

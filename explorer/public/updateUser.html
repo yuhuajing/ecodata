@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <title>更新用户信息页面</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/webbase.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pages-register.css"/>
+    <style type="text/css">
+        .code-span {
+            display: inline-block;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 35px;
+            width: 118px;
+            height: 35px;
+            float: right;
+            margin-left: 10px
+        }
+        .code-span:hover{
+            background-color: #c0ccda;
+        }
+    </style>
+</head>
+
+<body>
+<div class="zhucebox">
+    <div class="register mainregister py-container ">
+        <div class="registerArea" id="registerApp">
+            <div class="info" style="width: 650px">
+                <form method="POST" action="/updateUser" class="sui-form form-horizontal" onsubmit="submitForm(event)">
+
+<!--                    <div class="control-group">-->
+<!--                        <label class="control-label">更新用户名：</label>-->
+<!--                        <div class="controls">-->
+<!--                            <input type="text" placeholder="用户名" class="input-xfat input-xlarge"-->
+<!--                                   v-model.lazy="user.username" name="newusername" data-vv-as="用户名"-->
+<!--                                   v-validate="'required|alpha_dash|min:4|max:30|useful:1'">-->
+<!--                        </div>-->
+<!--                        <span style="color: red;"></span>-->
+<!--                    </div>-->
+<!--                    <div class="control-group">-->
+<!--                        <label class="control-label">更新密码：</label>-->
+<!--                        <div class="controls">-->
+<!--                            <input type="password" placeholder="设置登录密码" class="input-xfat input-xlarge"-->
+<!--                                   v-model="user.password" name="password" data-vv-as="密码"-->
+<!--                                   v-validate="'required|alpha_dash|min:4|max:30'">-->
+<!--                        </div>-->
+<!--                        <span style="color: red;"></span>-->
+<!--                    </div>-->
+
+                    <div class="control-group">
+                        <label class="control-label">更新手机号：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入你的手机号" class="input-xfat input-xlarge"
+                                   v-model="user.phone" name="phone" data-vv-as="手机号"
+                                   v-validate="{required:true,regex:/^1[35678]\d{9}$/,useful:2}">
+                        </div>
+                        <span style="color: red;"></span>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">更新邮箱：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入你的邮箱" class="input-xfat input-xlarge"
+                                   v-model="user.phone" name="email" data-vv-as="email"
+                                   v-validate="{required:true,regex:/^1[35678]\d{9}$/,useful:2}">
+                        </div>
+                        <span style="color: red;"></span>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                        <div class="controls">
+                            <input name="m1" type="checkbox" value="2" checked=""><span>同意协议<a>《更新用户协议》</a>和<a>《隐私声明》</a></span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label"></label>
+                        <div class="controls btn-reg">
+                            <input class="sui-btn btn-block btn-xlarge btn-danger" type="submit" value="更新用户" />
+                        </div>
+                    </div>
+                </form>
+                <script>
+                    function submitForm(event) {
+                        event.preventDefault(); // 阻止表单默认提交行为
+                        var form = event.target; // 获取表单元素
+                        var formData = new FormData(form);
+                        var userneme = localStorage.getItem('user');
+                        formData.append('username', userneme);
+                        fetch('/updateUser', {
+                            method: 'POST',
+                            body: formData
+                        }).then(function(response) {
+                            if (response.ok) {
+                                alert("Update userinfo successfully!!");
+                                window.location.href = '/login.html' ;
+                            } else {
+                                response.json().then(function(data) {
+                                    var queryParams = new URLSearchParams(data).toString();
+                                    window.location.href = '/error.html?' + queryParams;
+                                });
+                            }
+                            })
+                            .catch(function(error) {
+                            });
+                    }
+                </script>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

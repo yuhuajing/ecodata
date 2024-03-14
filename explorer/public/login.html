@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    <title>用户登录</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/webbase.css"/>
+    <link rel="stylesheet" type="text/css" href="css/pages-register.css"/>
+    <style type="text/css">
+        .code-span {
+            display: inline-block;
+            border: 1px solid #999;
+            text-align: center;
+            line-height: 35px;
+            width: 118px;
+            height: 35px;
+            float: right;
+            margin-left: 10px
+        }
+        .code-span:hover{
+            background-color: #c0ccda;
+        }
+    </style>
+</head>
+<body>
+<div class="zhucebox">
+    <div class="register mainregister py-container ">
+        <div class="registerArea" id="registerApp">
+            <div class="info" style="width: 650px">
+                <form method="POST" action="/login" class="sui-form form-horizontal" onsubmit="submitForm(event)">
+                    <div class="control-group">
+                        <label class="control-label">用户名：</label>
+                        <div class="controls">
+                            <input type="text" placeholder="请输入登录用户名" class="input-xfat input-xlarge"
+                                   v-model.lazy="user.username" name="username" data-vv-as="用户名"
+                                   v-validate="'required|alpha_dash|min:4|max:30|useful:1'">
+                        </div>
+                        <span style="color: red;"></span>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label">登录密码：</label>
+                        <div class="controls">
+                            <input type="password" placeholder="设置登录密码" class="input-xfat input-xlarge"
+                                   v-model="user.password" name="password" data-vv-as="密码"
+                                   v-validate="'required|alpha_dash|min:4|max:30'">
+                        </div>
+                        <span style="color: red;"></span>
+                    </div>
+<!--                    <div class="control-group">-->
+<!--                        <label class="control-label">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>-->
+<!--                        <div class="controls">-->
+<!--                           <span class="forget">点击<a href="updateUser.html">这里</a>重置您的个人信息</span>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="setting">-->
+<!--                    </div>-->
+                    <div class="control-group">
+<!--                        <label class="control-label"></label>-->
+<!--                        <label class="checkbox inline">-->
+<!--                            <input name="m1" type="checkbox" value="2" checked="">-->
+<!--                            自动登录-->
+<!--                        </label>-->
+
+<!--                        <div>-->
+<!--                            <span ><a href="adminlogin.html">管理员登录</a></span>-->
+<!--                        </div>-->
+                        <div class="controls btn-reg">
+                            <input class="sui-btn btn-block btn-xlarge btn-danger" type="submit" value="登录" />
+                        </div>
+                        <div >
+                            <span class="forget">没有账号？<a href="registerUser.html">注册</a></span>
+                        </div>
+                    </div>
+                </form>
+                <script>
+                    function submitForm(event) {
+                        event.preventDefault(); // 阻止表单默认提交行为
+                        var form = event.target; // 获取表单元素
+                        var formData = new FormData(form);
+                        fetch('/login', {
+                            method: 'POST',
+                            body: formData
+                        }).then(function(response) {
+                            if (response.ok) {
+                                response.json().then(function(data) {
+                                    localStorage.clear();
+                                    localStorage.setItem('user', data.data);
+                                    localStorage.setItem('tokens', data.token);
+                                    if (data.type === "admin") {
+                                        fetch('/adminfunc', {
+                                            method: 'POST',
+                                            body: formData
+                                        }).then(function(response) {
+                                            if (response.ok) {
+                                                response.json().then(function(data) {
+                                                    console.log(data)
+                                                   //var queryParams = new URLSearchParams(data).toString();
+                                                    localStorage.setItem('aname', data.username);
+                                                    localStorage.setItem('aid', data.id);
+                                                    localStorage.setItem('aemail', data.email);
+                                                    localStorage.setItem('aphone', data.phone);
+                                                    localStorage.setItem('aidentity', data.identity);
+                                                    localStorage.setItem('aapprove', data.approved);
+                                                  window.location.href = "/adminfuncs.html";//?"+queryParams;
+                                                });
+                                            }
+                                        })
+                                       // window.location.href = '/adminfuncs.html';
+                                    } else if (data.type === "user") {
+                                        fetch('/userfunc', {
+                                            method: 'POST',
+                                            body: formData
+                                        }).then(function(response) {
+                                            if (response.ok) {
+                                                response.json().then(function(data) {
+                                                    // var queryParams = new URLSearchParams(data).toString();
+                                                    localStorage.setItem('uname', data.username);
+                                                    localStorage.setItem('uid', data.id);
+                                                    localStorage.setItem('uemail', data.email);
+                                                    localStorage.setItem('uphone', data.phone);
+                                                    localStorage.setItem('uidentity', data.identity);
+                                                    localStorage.setItem('uapprove', data.approved);
+                                                    window.location.href = "/tracedata.html";//?"+queryParams;
+                                                });
+                                            }
+                                        })
+                                        //window.location.href = '/tracedata.html';
+                                    }
+                                });
+                            } else {
+                                response.json().then(function(data) {
+                                    var queryParams = new URLSearchParams(data).toString();
+                                    window.location.href = '/error.html?' + queryParams;
+                                });
+                            }
+                        })
+                            .catch(function(error) {
+                                console.log(666)
+                            });
+                    }
+                </script>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

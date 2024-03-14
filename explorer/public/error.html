@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff0000;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Error!</h1>
+<p id="errorMessage"></p>
+<p id="successMessage"></p>
+<p id="dataMessage"></p>
+
+<script>
+    // 从 URL 中解析查询参数
+    var queryParams = new URLSearchParams(window.location.search);
+    var error = queryParams.get('error');
+    var success = queryParams.get('success');
+    var data = queryParams.get('data');
+
+    // 在页面上展示数据
+    document.getElementById('errorMessage').textContent = 'Error: ' + decodeURIComponent(error);
+    document.getElementById('successMessage').textContent = 'Success: ' + success;
+    document.getElementById('dataMessage').textContent = 'Data: ' + decodeURIComponent(data);
+</script>
+</body>
+</html>

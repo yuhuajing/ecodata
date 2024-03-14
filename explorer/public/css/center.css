@@ -1,0 +1,1742 @@
+
+.midnav{
+    width: 100%;
+    /* overflow: hidden; */
+    background: #fff;
+    height: 100px;
+}
+.centerlogo{
+
+    float: left;
+
+    width: auto;
+
+    line-height: 110px;
+}
+.centerlogo img{
+
+}
+.centernaver{
+
+    float: left;
+
+    font-size: 36px;
+
+    /* line-height: 89px; */
+
+    margin-top: 26px;
+}
+.centersearch{
+
+    float: left;
+
+    width: 276px;
+
+    margin-left: 76px;
+
+    margin-top: 10px;
+}
+.centersearch .inputbox{
+    width: auto;
+}
+.gwcbtn{
+
+    float: left;
+
+    background: #eee;
+
+    border-radius: 4px;
+
+    padding: 0 5px;
+
+    margin-top: 34px;
+}
+.gwcbtn a{
+
+}
+.gwcbtn img{
+
+    vertical-align: middle;
+}
+.gwcbtn i{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #239c57;
+    color: #fff;
+    border-radius: 50%;
+    font-style: normal;
+    font-size: 12px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 700;
+}
+.cneterbox{overflow: hidden;width: 100%;}
+.centerboxL{background: #fff;width: 180px;float: left;overflow: hidden;}
+.centerboxL ul{
+
+    padding-left: 30px;
+
+    line-height: 33px;
+
+    border-bottom: 1px solid #eee;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+.centerboxL ul p{
+
+    font-size: 18px;
+
+    color: #000;
+
+    font-weight: 700;
+}
+.centerboxL ul li {
+
+    display: block;
+}
+.centerboxL ul li a{
+
+    font-size: 14px;
+
+    color: #333;
+
+    display: block;
+}
+.centerboxR{
+
+    float: left;
+
+    width: 1000px;
+}
+.centerboxR .main {
+    width: 1000px;
+}
+.box-0 {
+    padding: 20px 0;
+    height: 243px;
+}
+
+.box-1, .box-2 {
+    float: left;
+    width: 694px
+}
+
+.box-3 {
+    float: none;
+    margin-left: 714px;
+    width: 286px
+}
+.m-user {
+    float: left;
+    margin-bottom: 0;
+    background: #239C57;
+    width: 250px;
+    height: 243px;
+    -webkit-box-shadow: 2px 2px 10px rgba(0,0,0,.3);
+    box-shadow: 2px 2px 10px rgba(0,0,0,.3);
+}
+
+.m-user .mt {
+    height: 243px;
+    background-color: #fff
+}
+
+.m-user .mc {
+    position: relative;
+    height: 187px;
+    text-align: center
+}
+
+.m-user .mc:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* background: url(//misc.360buyimg.com/user/myjd/home/2.0.12/css/i/c-01.png) no-repeat 0 0 */
+}
+
+.m-user .mb {
+    padding: 10px 20px;
+    height: 36px;
+    background-color: #232331
+}
+
+.m-user .flag {
+    position: absolute;
+    top: 25px;
+    right: -8px;
+    padding: 0 10px;
+    height: 20px;
+    line-height: 20px;
+    color: #ff8100;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px
+}
+
+.m-user .flag:hover {
+    color: #fff;
+    background-color: #ff8100
+}
+
+.m-user .rank {
+    position: absolute;
+    top: 80px;
+    left: 105px;
+    z-index: 3;
+    display: none;
+    padding-left: 1px;
+    width: 40px;
+    height: 18px;
+    line-height: 18px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 2px 4px 4px 0 rgba(41,41,41,.5);
+    box-shadow: 2px 4px 4px 0 rgba(41,41,41,.5);
+    color: #343434;
+}
+
+.m-user .avatar {
+    display: block;
+    position: relative;
+    z-index: 2;
+    margin: 20px auto;
+    border-radius: 100%;
+    border: 4px solid #fff;
+    -webkit-box-shadow: 3px 2px 10px 0 rgba(79,5,1,.84);
+    box-shadow: 3px 2px 10px 0 rgba(79,5,1,.84);
+    overflow: hidden
+}
+
+.m-user .avatar,.m-user .avatar img {
+    width: 64px;
+    height: 64px
+}
+
+.m-user .user {
+    display: inline-block;
+    margin-bottom: 10px;
+    height: 20px;
+    overflow: hidden
+}
+
+.m-user .user-name {
+    font: 700 18px/20px Arial;
+    color: #fff
+}
+
+.m-user .user-plus {
+    display: none;
+    position: relative;
+    margin-left: 3px;
+    padding: 2px 3px 2px 19px;
+    height: 14px;
+    line-height: 14px;
+    color: #fff38d;
+    font-size: 12px;
+    background-color: #414141;
+    border-radius: 2px
+}
+
+.m-user .user-plus:before {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    width: 14px;
+    height: 12px;
+    background: url(//misc.360buyimg.com/user/myjd/home/2.0.12/css/i/sprite.png) no-repeat
+}
+
+.m-user .links a,.m-user .links span,.m-user .score a,.m-user .score span {
+    display: inline-block;
+    margin: 0 5px;
+    height: 22px;
+    line-height: 22px;
+    border-radius: 12px
+}
+
+.m-user .score a,.m-user .score span {
+    padding: 0 10px;
+    border: 1px solid #fff;
+    color: #fff
+}
+
+.m-user .score a:hover {
+    background-color: #fff;
+    color: #c81623
+}
+
+.m-user .text {
+    float: left;
+    margin-right: 10px;
+    color: #f4ca3a
+}
+
+.m-user .text em,.m-user .text span {
+    display: block
+}
+
+.m-user .text em {
+    font-size: 13px;
+    font-weight: 700
+}
+
+.m-user .button {
+    float: right;
+    padding: 0 10px;
+    margin-top: 5px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 14px;
+    background-color: #f4ca3a;
+    color: #232331;
+    font-weight: 700;
+    text-align: center
+}
+
+.m-user .button:hover {
+    background-color: #fff
+}
+
+.m-user.plus-DEFAULT .mc,.m-user.plus-PLUSEXPIRE .mc,.m-user.plus-TRYEXPIRE .mc,.m-user.plus-TRYING .mc,.m-user.plus-UNTRY .mc {
+    /* background-color: #e2231a; */
+}
+
+.m-user.plus-PLUS .mc {
+    background-color: #f4ca3a
+}
+
+.m-user.plus-PLUS .mc:before {
+    background: url(//misc.360buyimg.com/user/myjd/home/2.0.12/css/i/c-02.png) no-repeat 0 0
+}
+
+.m-user.plus-PLUS .user-name {
+    color: #232331
+}
+
+.m-user.plus-PLUS .user-plus {
+    float: right;
+    display: block
+}
+
+.m-user.plus-PLUS .user-plus:before {
+    background-position: -120px -120px
+}
+
+.m-user.plus-PLUS .score a {
+    border-color: #232331;
+    color: #232331
+}
+
+.m-user.plus-PLUS .score a:hover {
+    color: #232331
+}
+
+.m-user.plus-PLUS .score .score-vip:before {
+    background-color: #f4ca3a;
+    border-color: #232331
+}
+
+.m-user.plus-PLUS .score .score-vip:after {
+    background-position: -80px -80px
+}
+
+.m-user.plus-PLUS .score .score-stu {
+    border-color: #232331;
+    color: #232331
+}
+
+.m-user.plus-PLUS .text em {
+    line-height: 36px
+}
+
+.m-user.plus-DEFAULT .mb {
+    padding: 10px
+}
+
+.m-user.plus-DEFAULT .user-plus,.m-user.plus-TRYING .user-plus {
+    float: right;
+    display: block;
+    background-color: #bbb;
+    color: #fff
+}
+
+.m-user.plus-DEFAULT .user-plus:before,.m-user.plus-TRYING .user-plus:before {
+    background-position: -160px -120px
+}
+
+.m-user.enterprise .avatar {
+    -webkit-box-shadow: 4px 2px 8px 0 rgba(15,21,63,.2);
+    box-shadow: 4px 2px 8px 0 rgba(15,21,63,.2)
+}
+
+.m-user.enterprise .user-name {
+    color: #fff
+}
+
+.m-user.enterprise .links a {
+    padding: 0 15px;
+    border: 1px solid #eac183;
+    color: #eac183;
+    background-color: #202540
+}
+
+.m-user.enterprise .links a:hover {
+    background-color: #31395d
+}
+
+.m-user.enterprise .links .enterprise-vip {
+    position: relative;
+    padding: 0 10px 0 30px
+}
+
+.m-user.enterprise .links .enterprise-vip i {
+    position: absolute;
+    top: 4px;
+    left: 10px;
+    width: 17px;
+    height: 15px;
+    background-position: -280px -120px
+}
+
+.m-user.enterprise .text {
+    color: #fff
+}
+
+.m-user.enterprise .text em,.m-user.enterprise .text span {
+    text-shadow: 0 1px 4.95px rgba(59,36,1,.35)
+}
+
+.m-user.enterprise .button {
+    background-color: #fff
+}
+
+.m-user.enterprise .button:hover {
+    background-color: #202540;
+    color: #e0bd87
+}
+
+.m-user.enterprise .mc {
+    background-color: #2c2f4d
+}
+
+.m-user.enterprise .mc:before {
+    color: #080d28;
+    opacity: .4
+}
+
+.m-user.enterprise .mb {
+    padding: 10px 25px;
+    background-color: #e0bd87
+}
+
+.m-wallet {
+    margin: 9px 0 9px 250px;
+    overflow: visible
+}
+
+.m-wallet .mt button {
+    position: relative;
+    float: right;
+    margin-top: 24px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    width: 20px;
+    height: 14px;
+    text-align: center
+}
+
+.m-wallet .mt button .myjd-popup {
+    top: 25px;
+    left: -25px;
+    width: 70px
+}
+
+.m-wallet .mt button .myjd-popup:before {
+    top: -5px
+}
+
+.m-wallet .mt button .myjd-popup:after {
+    top: -5px;
+    margin-left: -7px;
+    width: 13px;
+    height: 13px
+}
+
+.m-wallet .mt button .inner {
+    width: 70px;
+    height: 30px;
+    line-height: 30px
+}
+
+.m-wallet .mt button:hover .myjd-popup {
+    display: block
+}
+
+.m-wallet ul {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px;
+    height: 129px;
+    overflow: hidden
+}
+
+.m-wallet li {
+    color: #333
+}
+
+.m-wallet div a:hover {
+    color: #c81623
+}
+
+.m-wallet .num {
+    padding-top: 10px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 22px;
+    font-weight: 700
+}
+
+.m-wallet .num a {
+    color: #333
+}
+
+.m-wallet .num s {
+    display: block;
+    margin-top: 10px;
+    width: 30px;
+    height: 3px;
+    background-color: #333
+}
+
+.m-wallet .extra,.m-wallet .num {
+    margin-bottom: 10px
+}
+
+.m-wallet .extra,.m-wallet .name,.m-wallet .operate {
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden
+}
+
+.m-wallet .name a {
+    color: #333
+}
+
+.m-wallet .extra,.m-wallet .extra a {
+    color: #999
+}
+
+.m-wallet .operate a {
+    color: #4184e8
+}
+
+.m-wallet .operate a,.m-wallet .operate span {
+    float: left
+}
+
+.m-wallet .spacer {
+    margin: 4px 8px;
+    width: 1px;
+    height: 12px;
+    background-color: #999
+}
+
+.m-wallet .icon-wallet-show {
+    background-position: -200px -80px
+}
+
+.m-wallet .icon-wallet-show:hover {
+    background-position: -240px -80px
+}
+
+.m-wallet .icon-wallet-hide {
+    background-position: -200px -120px
+}
+
+.m-wallet .icon-wallet-hide:hover {
+    background-position: -240px -120px
+}
+
+.m-block,.m-julike {
+    margin-bottom: 20px;
+    background-color: #fff
+}
+
+.m-block .mt,.m-julike .mt {
+    padding: 0 20px;
+    height: 55px;
+    line-height: 55px;
+    border-bottom: 1px solid #f0f3ef;
+    overflow: visible
+}
+
+.m-block .mt h3,.m-block .mt h5,.m-julike .mt h3,.m-julike .mt h5 {
+    float: left;
+    font-weight: 400
+}
+
+.m-block .mt h3,.m-julike .mt h3 {
+    font-size: 16px;
+    color: #333
+}
+
+.m-block .mt h5,.m-julike .mt h5 {
+    padding-left: 5px;
+    font-size: 12px;
+    color: #999
+}
+
+.m-block .mt .qrcode,.m-julike .mt .qrcode {
+    float: left;
+    margin: 22px 0 0 8px
+}
+
+.m-block .mt .extra-r a,.m-block .mt .more,.m-julike .mt .extra-r a,.m-julike .mt .more {
+    position: relative;
+    float: right;
+    padding-right: 10px;
+    color: #666
+}
+
+.m-block .mt .extra-r a:after,.m-block .mt .more:after,.m-julike .mt .extra-r a:after,.m-julike .mt .more:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 22px;
+    width: 5px;
+    height: 10px;
+    background: url(//misc.360buyimg.com/user/myjd/home/2.0.12/css/i/sprite.png) no-repeat -81px -161px
+}
+
+.m-block .mt .extra-r a:hover,.m-block .mt .more:hover,.m-julike .mt .extra-r a:hover,.m-julike .mt .more:hover {
+    color: #c81623
+}
+
+.m-block .mt .extra-r a:hover:after,.m-block .mt .more:hover:after,.m-julike .mt .extra-r a:hover:after,.m-julike .mt .more:hover:after {
+    background-position: -81px -121px
+}
+
+.m-order .nav {
+    padding: 15px 20px
+}
+
+.m-order .nav .item {
+    width: 90px
+}
+
+.m-order .list .state {
+    width: 338px
+}
+
+.m-order,.m-order .mc {
+    overflow: visible
+}
+
+.m-order .nav {
+    padding: 15px 0;
+    height: 90px
+}
+
+.m-order .nav .item {
+    float: left;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 13px 0 0;
+    margin: 0 20px;
+    width: 120px;
+    height: 90px;
+    text-align: center;
+    color: #333;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease
+}
+
+.m-order .nav .item:hover {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 0 16px 0 rgba(0,0,0,.1);
+    box-shadow: 0 0 16px 0 rgba(0,0,0,.1)
+}
+
+.m-order .nav .icon-sprite,.m-order .nav .name {
+    position: relative;
+    display: block
+}
+
+.m-order .nav .item0 .icon-sprite {
+    margin: 3px auto;
+    width: 44px;
+    height: 35px;
+    background-position: 0 -200px
+}
+
+.m-order .nav .item0:hover .icon-sprite {
+    background-position: 0 -250px
+}
+
+.m-order .nav .item1 .icon-sprite {
+    margin: 1px auto 2px;
+    width: 40px;
+    height: 38px;
+    background-position: -80px -200px
+}
+
+.m-order .nav .item1:hover .icon-sprite {
+    background-position: -80px -250px
+}
+
+.m-order .nav .item2 .icon-sprite {
+    margin: 1px auto 2px;
+    width: 41px;
+    height: 38px;
+    background-position: -160px -200px
+}
+
+.m-order .nav .item2:hover .icon-sprite {
+    background-position: -160px -250px
+}
+
+.m-order .nav .item3 .icon-sprite {
+    margin: 0 auto 1px;
+    width: 39px;
+    height: 41px;
+    background-position: -240px -200px
+}
+
+.m-order .nav .item3:hover .icon-sprite {
+    background-position: -240px -250px
+}
+
+.m-order .nav .item4 .icon-sprite {
+    margin: 0 auto;
+    width: 41px;
+    height: 41px;
+    background-position: -320px -200px
+}
+
+.m-order .nav .item4:hover .icon-sprite {
+    background-position: -320px -250px
+}
+
+.m-order .nav .name {
+    padding-top: 10px;
+    height: 16px;
+    line-height: 16px
+}
+
+.m-order .nav .number {
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    padding: 0 6px;
+    height: 19px;
+    border-radius: 10px;
+    background-color: #df3028;
+    font-size: 14px;
+    color: #fff
+}
+
+.m-order .list .item {
+    padding: 10px 20px;
+    height: 60px;
+    border-top: 1px solid #f0f3ef
+}
+
+.m-order .list .item .lrc-image {
+    width: 60px;
+    height: 60px
+}
+
+.m-order .list .good,.m-order .list .operate,.m-order .list .state {
+    float: left
+}
+
+.m-order .list .good {
+    width: 60px;
+    height: 60px
+}
+
+.m-order .list .state {
+    margin: 0 15px;
+    padding: 10px 0;
+    width: 400px;
+    height: 40px;
+    line-height: 20px;
+    color: #666;
+}
+
+.m-order .list .state .price {
+    color: #e2231a
+}
+
+.m-order .list .state .text,.m-order .list .state other {
+    height: 20px;
+    overflow: hidden
+}
+
+.m-order .list .state .text {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.m-order .list .state .date,.m-order .list .state .spacer,.m-order .list .state .type {
+    float: left
+}
+
+.m-order .list .state .spacer {
+    margin: 4px 8px;
+    width: 1px;
+    height: 12px;
+    background-color: #999
+}
+
+.m-order .list .operate {
+    padding: 20px 0 14px;
+    /*width: 226px;*/
+    height: 26px;
+    text-align: right;
+    font-size: 12px;
+}
+
+.m-order .list .operate .button,.m-order .list .operate .link,.m-order .list .operate .trackinfo {
+    display: inline;
+    padding: 4px 8px 5px;
+    text-align: center;
+    border: 1px solid transparent;
+    color: #333
+}
+
+.m-order .list .operate .button {
+    background-color: #c81623;
+    border-color: #c81623;
+    color: #fff;
+    font-size: 12px
+}
+
+.m-order .list .operate .button:hover {
+    color: hsla(0,0%,100%,.6)
+}
+
+.m-order .list .operate .trackinfo {
+    position: relative;
+    cursor: pointer
+}
+
+.m-order .list .operate .trackinfo:hover .ti-wrapper {
+    display: block
+}
+
+.m-order .list .operate .link:hover,.m-order .list .operate .trackinfo:hover {
+    color: #c81623
+}
+
+.m-order .list .operate .spacer {
+    margin: 5px;
+    padding-left: 1px;
+    height: 15px;
+    background-color: #eee
+}
+
+.m-order .empty {
+    padding: 60px 0 90px;
+    color: #999;
+    text-align: center;
+    background-color: #fff
+}
+
+.m-order .empty:before {
+    content: "";
+    display: inline-block;
+    margin-right: 20px;
+    overflow: hidden;
+    vertical-align: middle;
+    width: 70px;
+    height: 70px;
+    background: url(//misc.360buyimg.com/user/myjd/home/2.0.12/css/i/sprite.png) no-repeat -430px -95px
+}
+.m-follow li {
+    height: 60px;
+    line-height: 30px;
+    color: #333;
+    font-size: 16px;
+    float:left;
+    width: 33%;
+    text-align: center;
+}
+.m-follow ul{
+    overflow: hidden;
+}
+.m-follow .text {
+    color: #666;
+    font-size: 12px
+}
+
+.m-follow a:hover {
+    color: #c81623
+}
+.slick-track{
+    overflow: hidden;
+}
+.content-item{
+    float: left;
+}
+.m-record .mc{
+    overflow: hidden;
+    padding: 20px;
+
+}
+
+/*订单*/
+.mod-comm {
+    padding: 10px 20px 20px
+}
+
+.mod-comm .mt {
+    padding: 10px 0
+}
+
+.mod-comm .mt h3 {
+    font-size: 12px;
+    color: #666;
+    font-family: '\5b8b\4f53';
+    line-height: 18px
+}
+
+.mod-comm .mc {
+    line-height: 20px
+}
+
+.mod-comm .smt-01 {
+    background: #f5f5f5;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 20px;
+    margin-top: 10px
+}
+
+.mod-comm .smc-01 {
+    border: 1px solid #f2f2f2;
+    padding: 20px 20px 10px
+}
+
+.mod-comm .extra-r a.btn-close {
+    color: #333
+}
+
+.mod-comm .extra-r a.btn-close b {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/icon2.png) 0 -58px no-repeat;
+    width: 7px;
+    height: 5px;
+    overflow: hidden;
+    vertical-align: middle;
+    margin-left: 5px
+}
+
+.mod-comm .extra-r a.btn-close:hover {
+    color: #333
+}
+.order-tb {
+    width: 100%;
+}
+.order-tb .i-help {
+    display: inline-block;
+    background-image: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/sprite-tip.png);
+    background-repeat: no-repeat
+}
+
+.jd-otc {
+    width: 47px;
+    height: 16px;
+    background-position: 0 -31px
+}
+
+.order-tb {
+    width: 100%
+}
+
+.order-tb .btn-spec1 {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;background: #fff;
+    border: 1px solid #e4393c;
+    color: #e4393c;
+    border-radius: 2px;
+    width: 85px;
+    height: 18px;
+    line-height: 18px;
+    padding: 2px 0;
+    margin: 3px 0;
+    text-align: center
+}
+
+.order-tb .btn-spec1:hover {
+    background: #e4393c;
+    font-weight: 400;
+    color: #fff
+}
+
+.order-tb .i-help {
+    width: 16px;
+    height: 16px;
+    margin-bottom: -3px;
+    background-position: -26px 0
+}
+
+.order-tb .number-col {
+    width: 394px
+}
+
+.order-tb .amount-col,.order-tb .consignee-col,.order-tb .status-col {
+    width: 105px
+}
+
+.order-tb thead th {
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    background: #f5f5f5;
+    color: #666;
+    font-weight: 400
+}
+
+.order-tb tbody td {
+    border: 1px solid #e5e5e5
+}
+
+.order-tb .td-02 {
+    height: 40px;
+    line-height: 40px;
+    background: #f5f5f5
+}
+
+.order-tb .td-02 .tip {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;vertical-align: middle;
+    background: #ffaa71;
+    color: #fff;
+    height: 16px;
+    line-height: 16px;
+    margin: 0 5px 0 15px;
+    padding: 0 2px
+}
+
+.order-tb .sep-row {
+    height: 20px
+}
+
+.order-tb .sep-row td {
+    border: 0
+}
+
+.order-tb .tr-th {
+    background: #f5f5f5;
+    height: 31px;
+    line-height: 31px;
+    color: #aaa;
+    overflow: hidden
+}
+
+.order-tb .tr-th td {
+    border-bottom-color: #f5f5f5
+}
+
+.order-tb .tr-th span {
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    padding: 2px 0 0;
+    _display: inline
+}
+
+.order-tb .tr-th span.shop-txt {
+    padding: 0
+}
+
+.order-tb .tr-th .gap {
+    width: 14px
+}
+
+.order-tb .tr-th .dealtime {
+    margin-right: 30px;
+    _margin-right: 15px;
+    font-family: verdana
+}
+
+.order-tb .tr-th .number {
+    width: 226px;
+    font-family: verdana
+}
+
+.order-tb .tr-th .jd-baina {
+    margin-left: 5px
+}
+
+.order-tb .tr-th a {
+    color: #333
+}
+
+.order-tb .tr-th a:hover {
+    color: #e4393c
+}
+
+.order-tb .tr-th .order-shop {
+    width: 261px
+}
+
+.order-tb .tr-th .order-shop .shop-txt {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;vertical-align: middle;
+    max-width: 124px;
+    overflow: hidden;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+.order-tb .tr-th .order-shop .shop-sam {
+    max-width: 90px
+}
+
+.order-tb .tr-th .order-shop .shop-goodpop {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 73px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/goodPop-icon.png) 0 0 no-repeat;
+    margin-right: 10px;
+    margin-top: 4px
+}
+
+.order-tb .tr-th .btn-im,.order-tb .tr-th .btn-im-off {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 16px;
+    height: 16px;
+    margin: 0 0 0 5px;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/sprite-im.png) -26px 0 no-repeat;
+    vertical-align: middle
+}
+
+.order-tb .tr-th .btn-im-jd {
+    background-position: 0 0
+}
+
+.order-tb .tr-th .btn-im-off {
+    background-position: -52px 0
+}
+
+.order-tb .tr-th .btn-im-plus {
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/im-plus.png) 0 0 no-repeat
+}
+
+.order-tb .tr-th .btn-mail {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 16px;
+    height: 13px;
+    margin: 0 0 0 5px;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/order-icons.png) -57px 0 no-repeat;
+    vertical-align: middle
+}
+
+.order-tb .tr-th .tr-operate {
+    float: right;
+    position: relative;
+    margin-right: 15px;
+    width: 397px;
+    height: 23px
+}
+
+.order-tb .tr-th .order-del {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    display: none;
+    width: 13px;
+    height: 13px;
+    font-size: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/order-icons.png) -23px -132px no-repeat
+}
+
+.order-tb .tr-th .order-del:hover {
+    background-position: 0 -132px
+}
+
+.order-tb .tr-th .order-share {
+    position: absolute;
+    right: 0;
+    top: 6px;
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    font-size: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/order-icons.png) 0 -222px no-repeat
+}
+
+.order-tb .tr-th .order-share:hover {
+    background-position: -20px -222px
+}
+
+.order-tb .tr-th .tel {
+    width: 180px;
+    color: #aaa;
+    font-family: verdana
+}
+
+.order-tb .tr-th .tel .tel-icon {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 19px;
+    height: 19px;
+    margin-right: 3px;
+    overflow: hidden;
+    vertical-align: middle;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/order-icons.png) -75px -55px
+}
+
+.order-tb .tr-th-02 {
+    background: #fff
+}
+
+.order-tb .tr-bd {
+    text-align: center;
+    vertical-align: top
+}
+
+.order-tb .tr-bd td {
+    padding: 14px 0
+}
+
+.order-tb .tr-bd td.mxg {
+    position: relative
+}
+
+.order-tb .tr-bd td.mxg .goods-item {
+    min-height: 87px
+}
+
+.order-tb .tr-bd td .mxg-status {
+    height: 18px;
+    line-height: 18px;
+    font-size: 12px;
+    width: 470px;
+    position: absolute;
+    text-align: left;
+    left: 10px;
+    bottom: 13px
+}
+
+.order-tb .tr-bd td .mxg-status span.mxg-status-label {
+    color: #c34f47
+}
+
+.order-tb tbody.split-tbody .tr-th td {
+    border-width: 0 1px
+}
+
+.order-tb tbody.split-tbody .tr-bd td {
+    border-width: 0 1px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/split-line.png) -14px 0 no-repeat
+}
+
+.order-tb tbody.split-tbody .tr-bd td.first {
+    background-position: 0 0
+}
+
+.order-tb tbody.split-tbody .tr-bd td.last {
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/split-line.png) right top no-repeat
+}
+
+.order-tb tbody.split-tbody .sep-tr-bd {
+    height: 1px;
+    overflow: hidden
+}
+
+.order-tb tbody.split-tbody .sep-tr-bd td {
+    padding: 0
+}
+
+.order-tb tbody.split-tbody-last .tr-bd td {
+    border-width: 0 1px 1px
+}
+
+.order-tb .tr-th-split td {
+    border-bottom: none
+}
+
+.order-tb .tr-th-split .split-row {
+    position: relative;
+    top: 1px;
+    padding: 11px 0;
+    height: 18px;
+    margin: 1px 0 0;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.order-tb .tr-th-split .split-row02 {
+    position: relative;
+    color: #393941
+}
+
+.order-tb .tr-th-split span.fr {
+    float: right
+}
+
+.order-tb .tr-th-split .order-consignee {
+    width: 128px;
+    margin-right: 38px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.order-tb .tr-th-split .order-count em {
+    font-family: verdana
+}
+
+.order-tb .tr-th-split .order-pay {
+    width: 178px
+}
+
+.order-tb .tr-th-split .top-arr {
+    position: absolute;
+    width: 17px;
+    height: 10px;
+    left: 180px;
+    top: -10px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/split-arr.png) no-repeat;
+    overflow: hidden
+}
+
+.order-tb .tr-th-split .split-tip {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    cursor: default
+}
+
+.order-tb .goods-item {
+    display: inline-block;
+    display: block;
+    float: left;
+    width: 255px;
+    margin-right: 10px
+}
+
+.order-tb .goods-item:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden
+}
+
+* html .order-tb .goods-item {
+    height: 1%
+}
+
+*+html .order-tb .goods-item {
+    min-height: 1%
+}
+
+.order-tb .goods-item .p-img {
+    float: left;
+    width: 60px;
+    height: 60px;
+    border: 1px solid #efefef;
+    margin: 0 14px;
+    _display: inline
+}
+
+.order-tb .goods-item .p-msg {
+    float: left;
+    width: 160px
+}
+
+.order-tb .goods-item .p-name {
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+    color: #333;
+    text-align: left
+}
+
+.order-tb .goods-item .p-name .p-toplife {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 49px;
+    height: 12px;
+    margin-right: 4px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/i-toplife.png);
+    position: relative;
+    top: 2px
+}
+
+.order-tb .goods-item .p-name .p-dabaitiao {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;height: 16px;
+    line-height: 16px;
+    background: #e4393c;
+    border-radius: 1px;
+    padding: 1px 4px;
+    color: #fff;
+    margin-right: 4px
+}
+
+.order-tb .goods-item .p-name a {
+    color: #333;
+    *zoom:1}
+
+.order-tb .goods-item .p-name a:hover {
+    color: #e4393c
+}
+
+.order-tb .goods-item .p-name .p-farfetch {
+    width: 73px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/farfetch-201907.png) no-repeat;
+    overflow: hidden;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;position: relative;
+    vertical-align: middle;
+    top: -2px
+}
+
+.order-tb .goods-item .p-name .p-diannao {
+    width: 56px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/icon-jddn.png) no-repeat;
+    overflow: hidden;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;position: relative;
+    vertical-align: middle;
+    top: -2px
+}
+
+.order-tb .goods-item .p-name .p-shuma {
+    width: 56px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/icon-jdsm.png) no-repeat;
+    overflow: hidden;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;position: relative;
+    vertical-align: middle;
+    top: -2px
+}
+
+.order-tb .goods-item .p-name .p-wenju {
+    width: 56px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/icon-jdwj.png) no-repeat;
+    overflow: hidden;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;position: relative;
+    vertical-align: middle;
+    top: -2px
+}
+
+.order-tb .goods-item .p-name .p-jpsj {
+    width: 55px;
+    height: 16px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/icon-jpsj.png) no-repeat;
+    overflow: hidden;
+    margin-right: 5px;
+    display: inline-block;
+    *display: inline;
+    *zoom:1;position: relative;
+    vertical-align: middle;
+    top: -2px
+}
+
+.order-tb .goods-item .p-extra {
+    color: #aaa;
+    text-align: left
+}
+
+.order-tb .goods-item .p-extra .gold-alink {
+    color: #aaa
+}
+
+.order-tb .goods-item .p-extra .gold-alink:hover {
+    color: #e4393c
+}
+
+.order-tb .goods-item .p-extra .gold-alink span {
+    color: #333
+}
+
+.order-tb .goods-item .o-info {
+    text-align: left;
+    color: #aaa
+}
+
+.order-tb .goods-item .o-match,.order-tb .goods-item .o-similar {
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer
+}
+
+.order-tb .goods-item .o-match i,.order-tb .goods-item .o-similar i {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    vertical-align: top
+}
+
+.order-tb .goods-item .o-match em,.order-tb .goods-item .o-similar em {
+    display: inline-block;
+    vertical-align: top
+}
+
+.order-tb .goods-item .o-similar i {
+    margin-top: 2px;
+    background-position: -31px 0
+}
+
+.order-tb .goods-item .o-match i {
+    background-position: -56px 0
+}
+
+.order-tb .goods-number {
+    float: left;
+    width: 40px;
+    text-align: left;
+    color: #aaa;
+    font-family: verdana
+}
+
+.order-tb .goods-repair {
+    float: right;
+    width: 84px;
+    text-align: center
+}
+
+.order-tb .goods-repair .btn-resell {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;position: relative;
+    width: 44px;
+    padding: 2px 0 3px 30px;
+    margin: 5px 0 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    color: #999;
+    border-radius: 1px
+}
+
+.order-tb .goods-repair .btn-resell b {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 9px;
+    width: 21px;
+    height: 23px;
+    margin-right: 5px;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/resell-icons.png) 0 0 no-repeat
+}
+
+.order-tb .goods-repair .btn-resell:hover {
+    background: #fff;
+    border-color: #e4393c;
+    color: #e4393c
+}
+
+.order-tb .goods-repair .btn-resell:hover b {
+    background-position: 0 -43px
+}
+
+.order-tb .goods-repair .a-br {
+    display: block
+}
+
+.order-tb .consignee {
+    color: #333
+}
+.mod-main .mt h3 {
+    float: left;
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    color: #333;
+    line-height: 20px
+}
+
+.mod-main .mt .extra-l {
+    float: left
+}
+
+.mod-main .mt .extra-l li {
+    float: left;
+    padding-left: 20px
+}
+
+.mod-main .mt .extra-l li a {
+    display: inline-block;
+    padding-bottom: 2px;
+    color: #999
+}
+
+.mod-main .mt .extra-l li a:hover,.mod-main .mt .extra-l li a:hover em {
+    color: #e4393c
+}
+
+.mod-main .mt .extra-l li a.curr {
+    padding-bottom: 0;
+    color: #e4393c;
+    border-bottom: 2px solid #e4393c;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none
+}
+
+.mod-main .mt .extra-l li.fore-last {
+    border-right: 0
+}
+
+.mod-main .mt .extra-l em {
+    margin-left: 5px
+}
+
+.mod-main .mt .extra-r {
+    float: right
+}
+
+.mod-main .mc {
+    overflow: visible
+}
+.order-tb .ordertime-hover .time-txt {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.12)
+}
+
+.order-tb .ordertime-hover .time-txt b {
+    background-position: -20px -207px
+}
+
+.order-tb .ordertime-hover .time-txt .blank {
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 136px;
+    top: 21px;
+    left: 0;
+    background: #fff;
+    z-index: 3
+}
+
+.order-tb .ordertime-hover .time-list {
+    display: block;
+    box-shadow: 0 0 10px rgba(0,0,0,.12)
+}
+
+.order-tb .order-detail-txt {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;vertical-align: middle
+}
+
+.order-tb .promisejdint {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 61px;
+    height: 18px;
+    vertical-align: middle;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/myjd/skin/2014/i/jdInt-icon.png) no-repeat;
+    margin-left: 5px
+}
+
+.order-tb .promisejdint:hover {
+    text-decoration: none
+}
+
+.order-tb .promisejdhaitun {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 69px;
+    height: 18px;
+    vertical-align: middle;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/jdInt-icon.png) no-repeat;
+    margin-left: 5px
+}
+
+.order-tb .promisejdhaitun:hover {
+    text-decoration: none
+}
+
+.order-tb .ding-icon {
+    display: inline-block;
+    *display: inline;
+    *zoom:1;width: 39px;
+    height: 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/ding-icon1.png) no-repeat;
+    margin-left: 5px
+}
+
+.order-tb .ding-icon:hover {
+    text-decoration: none
+}
+
+.order-tb .jd-otc {
+    margin-left: 5px;
+    vertical-align: top
+}
+
+.order-tb .jd-pingou {
+    margin-left: 8px;
+    height: 16px;
+    background: #F94c00;
+    color: #FFF;
+    padding: 0 4px;
+    font-size: 12px;
+    border-radius: 2px;
+    line-height: 16px;
+    display: inline-block;
+    font-family: SimSun
+}
+
+.order-tb .jd-sam {
+    display: inline-block;
+    width: 42px;
+    height: 16px;
+    overflow: hidden;
+    background: url(//misc.360buyimg.com/user/myjd/ordercenter/css/i/order-icons.png) 0 -240px no-repeat;
+    margin-left: 5px;
+    vertical-align: top
+}

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据追溯--首页</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript">
+        //显示悬浮层
+        function showInform(){
+            document.getElementById("inform").style.display='block';
+            // document.getElementById("inform").css("display","block");
+        }
+        //隐藏悬浮层
+        function hiddenInform(event){
+            var informDiv = document.getElementById('inform');
+            var x=event.clientX;
+            var y=event.clientY;
+            var divx1 = informDiv.offsetLeft;
+            var divy1 = informDiv.offsetTop;
+            var divx2 = informDiv.offsetLeft + informDiv.offsetWidth;
+            var divy2 = informDiv.offsetTop + informDiv.offsetHeight;
+            if( x < divx1 || x > divx2 || y < divy1 || y > divy2){
+                document.getElementById('inform').style.display='none';
+            }
+        }
+    </script>
+    <style type="text/css">
+        body{
+            position: relative;
+        }
+        #inform{
+            position: absolute;
+
+            opacity: 0.95;
+            width: 270px;
+            max-height: 1000px; /* 设置最大高度，当高度达到此值时出现滚动条 */
+            z-index: 10;
+            background-color: #E0E5E5;
+            overflow: auto; /* 自动添加滚动条 */
+            box-shadow:0px 0px 10px #000; /* 外阴影 */
+            display: none; /* 默认隐藏 */
+        }
+        #informTable{
+            table-layout:fixed; /* 用于实现表格td自动换行的部分代码*/
+            width: 325px;
+        }
+
+        #informTable{
+            width: 270px;
+            height:525px;
+            font-size: 16px;
+            font-family: Georgia;
+            color: #555555;
+            word-wrap:break-word; /*自动换行*/
+            padding: 0 0 0 0;
+        }
+        #informTable tr td:hover{
+            background-color: #D9D9D9;
+        }
+        #inform hr{
+            border:1;
+            width: 325px;
+            margin-bottom: 0px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="logosearch">
+    <div class="main">
+        <div class="logosearchR">
+            <div class="search">
+                <div class="searchtype">
+                    <span><a href="login.html">登录</a></span>
+                    <span><a href="registerUser.html">注册</a></span>
+<!--                    <span><a href="tousu.html">投诉</a></span>-->
+                    <!--                   <span class="active"> 药品</span>-->
+                    <!--				   <span><a href="zhuisu.html">追溯码验证查询</a></span>-->
+
+                </div>
+                <div>
+                    <input type="text" class="inputbox" placeholder="请输入你要搜索的关键字">
+                    <input type="button" class="searchbtn" value="搜索">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="foot1">
+    <div class="main">
+        <div class="footblank">
+            <div class="footblanklist">
+                <img src="">
+                <p class="footblank1">
+
+                </p>
+                <p class="footblank2"></p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/zhen.png">
+                <p class="footblank1">
+                    真品货源
+                </p>
+                <p class="footblank2">正品、优质、放心</p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/tong.png">
+                <p class="footblank1">
+                    数据互通
+                </p>
+                <p class="footblank2">种植户、商家、消费者</p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/yi.png">
+                <p class="footblank1">
+                    数据不可篡改
+                </p>
+                <p class="footblank2">区块链默克尔树、密码学</p>
+            </div>
+            <div class="footblanklist">
+                <img src="img/danbaojiaoyi.png">
+                <p class="footblank1">
+                    区块链溯源
+                </p>
+                <p class="footblank2">交易哈希、区块高度溯源</p>
+            </div>
+        </div>
+        <div class="frendlink">
+            <div class="frendlinkl">
+                <div class="footlinkbox">
+                    <p>区块链</p>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/115465777">区块链出块机制</a>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/115803249">区块链数据存储</a>
+                    <a href="https://blog.csdn.net/weixin_41303815/category_11139294.html?spm=1001.2014.3001.5482">密码学</a>
+                </div>
+                <div class="footlinkbox">
+                    <p>区块链浏览器</p>
+                    <a href="">区块高度</a>
+                    <a href="">区块信息</a>
+                    <a href="">交易信息</a>
+                </div>
+                <div class="footlinkbox">
+                    <p>智能合约</p>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/119328874">上链合约</a>
+                    <a href="https://blog.csdn.net/weixin_41303815/article/details/119328874">查询合约</a>
+                </div>
+                <div class="footlinkbox">
+                    <p>帮助中心</p>
+                    <a href="">联系我们</a>
+                    <a href="https://blog.csdn.net/weixin_41303815">更多资料</a>
+                </div>
+            </div>
+            <div class="frendlinkm"></div>
+            <div class="frendlinkr">
+                <p  class="call"><img src="img/call.png"><span>xxx-xxxx-xxxx</span></p>
+                <p class="email"><img src="img/email.png"><span >xxxx@163.com</span></p>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div style="background: #acacac">
+
+
+    <div class="main">
+        <div id="footer" class="wrapper">
+            <p>
+                <a href="">首页</a>
+                | <a href="">加入我们</a>
+                | <a href="">合作及洽谈</a>
+                | <a href="">联系我们</a>
+                | <a href="https://blog.csdn.net/weixin_41303815/category_10971124.html?spm=1001.2014.3001.5482">博客资料</a>
+            </p>
+            版权所有  xxx实验室© 2024-2024 All rights reserved <br>
+        </div>
+    </div>
+</div>
+</body>
+</html>
