@@ -41,30 +41,7 @@ func Explorer() {
 	app.Get("/checkdata", checkdata)
 	app.Get("/checktx", checktx)
 
-	//app.Use(jwtware.New(jwtware.Config{
-	//	SigningKey: jwtware.SigningKey{Key: []byte("secret")},
-	//}))
-	app.Post("/adminlogin", dealadminlogin)
-
-	app.Post("/updateUser", updateUser)
-
-	app.Post("/manageuser", manageuser)
-	app.Post("/managetousu", managetousu)
-	app.Get("/adminusers", adminusers)
-	app.Get("/alltousu", alltousu)
-
-	app.Post("/managedrugs", managedrugs)
-	app.Post("/updateProdData", updateProdData)
-
-	app.Post("/tousu", addtousu)
-	app.Post("/dealtousu", dealtousu)
-
 	log.Fatal(app.Listen(":3005"))
-}
-
-type Tousu struct {
-	Email string `json:"email"`
-	Tousu string `json:"tousu"`
 }
 
 func getchaindatauser(c *fiber.Ctx) error {
@@ -87,70 +64,9 @@ func getchaindata(c *fiber.Ctx) error {
 	})
 }
 
-func addtousu(c *fiber.Ctx) error {
-	payload := &Tousu{}
-	if err := c.BodyParser(payload); err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-		})
-	}
-	err := database.InsertTousu(payload.Email, payload.Tousu)
-	if err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-		})
-	}
-	return c.SendStatus(200)
-}
-
-//func dealquery(c *fiber.Ctx) error {
-//	resdata := database.QueryStartBlock()
-//	return c.Render("index", fiber.Map{
-//		"Data": resdata,
-//	})
-//}
-
-func dealtousu(c *fiber.Ctx) error {
-	id := c.Query("id")
-	database.DealTousu(id)
-	return nil
-}
-
-func alltousu(c *fiber.Ctx) error {
-	resdata := database.QueryAlltousu()
-	return c.Render("alltousu", fiber.Map{
-		"Data": resdata,
-	})
-}
-
-func adminusers(c *fiber.Ctx) error {
-	resdata := database.QueryAdminUserInfo()
-	return c.Render("adminusers", fiber.Map{
-		"Data": resdata,
-	})
-}
-
 func approveuser(c *fiber.Ctx) error {
 	_, resdata := database.QueryAllUserInfo()
 	return c.Render("approveuser", fiber.Map{
-		"Data": resdata,
-	})
-}
-
-func managedrugs(c *fiber.Ctx) error {
-	resdata := database.QueryAllTrace()
-	return c.Render("manegedrugs", fiber.Map{
-		"Data": resdata,
-	})
-}
-
-func managetousu(c *fiber.Ctx) error {
-	resdata := database.QueryUndealttousu()
-	return c.Render("managetousu", fiber.Map{
 		"Data": resdata,
 	})
 }
@@ -261,26 +177,6 @@ type updatetraceData struct {
 	Baseinfo string `json:"baseinfo"`
 }
 
-func updateProdData(c *fiber.Ctx) error {
-	payload := &updatetraceData{}
-	if err := c.BodyParser(payload); err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-		})
-	}
-	//err := database.UpdateProdInfo(payload.Id, payload.Baseinfo)
-	//if err != nil {
-	//	return c.Status(400).JSON(DataResponse{
-	//		Error:   err.Error(),
-	//		Success: false,
-	//		Data:    "",
-	//	})
-	//}
-	return c.SendStatus(200)
-}
-
 func giveapprove(c *fiber.Ctx) error {
 	id := c.Query("id")
 	err := database.ApproveUserInfo(id)
@@ -365,27 +261,6 @@ func deallogin(c *fiber.Ctx) error {
 	})
 }
 
-func dealadminlogin(c *fiber.Ctx) error {
-	payload := &tabletypes.UserInfo{}
-	if err := c.BodyParser(payload); err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-		})
-	}
-	err, userinfo := database.QueryUserInfo(payload.Username, payload.Password, tabletypes.Admin)
-	if err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-			Type:    userinfo.Identity,
-		})
-	}
-	return c.SendStatus(200)
-}
-
 type DataResponse struct {
 	Error   string              `json:"error"`
 	Success bool                `json:"success" default:"false"`
@@ -431,26 +306,6 @@ func updateAdminUser(c *fiber.Ctx) error {
 	}
 
 	err := database.UpdateAdminUserInfo(payload.Username, payload.Phone, payload.Email)
-	if err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-		})
-	}
-	return c.SendStatus(200)
-}
-func updateUser(c *fiber.Ctx) error {
-	payload := &tabletypes.NewUserInfo{}
-	if err := c.BodyParser(payload); err != nil {
-		return c.Status(400).JSON(DataResponse{
-			Error:   err.Error(),
-			Success: false,
-			Data:    "",
-		})
-	}
-
-	err := database.UpdateUserInfo(payload.Username, payload.Newusername, payload.Password, payload.Phone, payload.Email)
 	if err != nil {
 		return c.Status(400).JSON(DataResponse{
 			Error:   err.Error(),
