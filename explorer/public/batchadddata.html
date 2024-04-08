@@ -53,50 +53,25 @@
         <div class="registerArea" id="registerApp">
 
             <div class="info" style="width: 650px">
-                <form method="POST"  class="sui-form form-horizontal" onsubmit="submitForm(event)">
+                <form method="POST" enctype="multipart/form-data" action="/upload" onsubmit="submitForm(event)">
                     <div class="control-group">
-                        <label class="control-label">Id：</label>
+                        <label class="control-label">选择文件：</label>
                         <div class="controls">
-                            <label id="uuidLabel" name="id" class="control-label uuid-label"> xx </label>
+                            <input type="file" name="file">
                         </div>
                     </div>
-                    <div class="control-group">
-                        <label class="control-label">水质状况：</label>
-                        <div class="controls">
-                            <input type="text" placeholder="请输入水质状况" class="input-xfat input-xlarge"
-                                   v-model.lazy="user.username" name="waterdata" data-vv-as="用户名">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label">二氧化碳数据：</label>
-                        <div class="controls">
-                            <input type="text" placeholder="Co2" class="input-xfat input-xlarge"
-                                   v-model="user.password" name="codata" data-vv-as="密码">
-                        </div>
-                        <!--                        <span style="color: red;">{{ errors.first('password') }}</span>-->
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">温度：</label>
-                        <div class="controls">
-                            <input type="text" placeholder="ecodata" class="input-xfat input-xlarge"
-                                   v-model="user.confirmPassword" name="ecodata" data-vv-as="确认密码">
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label">操作人：</label>
-                        <div class="controls">
-                            <input type="text" placeholder="操作人" class="input-xfat input-xlarge"
-                                   v-model="user.confirmPassword" name="operator" data-vv-as="确认密码">
-                        </div>
-                    </div>
+                    <br>
                     <div class="controls btn-reg">
-                        <input class="sui-btn btn-block btn-xlarge btn-danger" type="submit" value="数据上链" />
+                        <input class="sui-btn btn-block btn-xlarge btn-danger" type="submit" value="批量上链" />
                     </div>
+<!--                    <input type="submit" value="Upload">-->
                 </form>
+
                 <div class="clearfix"></div>
             </div>
+
+
+
         </div>
 
     </div>
@@ -121,21 +96,18 @@
 
 <script>
     function submitForm(event) {
-        alert("Please waiting，Data is send On-Chain!!!");
+        alert("数据批量上链中！！请稍等数据上链!!!");
         //console.log(123)
         event.preventDefault(); // 阻止表单默认提交行为
         var form = event.target; // 获取表单元素
         var formData = new FormData(form);
-        fetch('/addecodata', {
+        fetch('/upload', {
             method: 'POST',
             body: formData
         }).then(function(response) {
             if (response.ok) {
-                response.json().then(function(data) {
-                    var hash = data.data;
-                    alert("On-Chain successfully with hash: " + hash);
-                    window.location.href = '/adminfuncs.html';
-                });
+                alert("数据批量上链中，请稍后！！: " );
+                window.location.href = '/adminfuncs.html';
             } else {
                 alert("On-Chain failed, 链拥堵，请稍后再试！！");
                 window.location.reload(); // 刷新当前页面

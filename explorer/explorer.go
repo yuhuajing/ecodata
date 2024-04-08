@@ -1,16 +1,21 @@
 package explorer
 
 import (
+	"encoding/csv"
 	"fmt"
 	fiber "github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/utils"
 	html "github.com/gofiber/template/html/v2"
 	jwt "github.com/golang-jwt/jwt/v5"
+	"io"
 	"log"
 	"main/common/tabletypes"
 	"main/core/database"
 	"main/core/sendtx"
 	txdata2 "main/core/txdata"
+	"os"
+	"path/filepath"
+	"strings"
 	"time"
 )
 
@@ -40,6 +45,7 @@ func Explorer() {
 	app.Get("/gettxbyhash", gettxbyhash)
 	app.Get("/checkdata", checkdata)
 	app.Get("/checktx", checktx)
+	app.Post("/upload", upload)
 
 	log.Fatal(app.Listen(":3005"))
 }
@@ -314,6 +320,101 @@ func updateAdminUser(c *fiber.Ctx) error {
 		})
 	}
 	return c.SendStatus(200)
+}
+
+func upload(c *fiber.Ctx) error {
+
+	// Retrieve the file from the form data
+	handler, err := c.FormFile("file")
+	file, err := handler.Open()
+	if err != nil {
+		return c.Status(400).JSON(DataResponse{
+			Error:   err.Error(),
+			Success: false,
+			Data:    "",
+		})
+	}
+
+	// Create the uploads directory if it doesn't exist
+	if err := os.MkdirAll("uploads", os.ModePerm); err != nil {
+		return c.Status(400).JSON(DataResponse{
+			Error:   err.Error(),
+			Success: false,
+			Data:    "",
+		})
+	}
+
+	// Create a new file in the uploads directory
+	dst, err := os.Create(filepath.Join("uploads", handler.Filename))
+	//fmt.Println(handler.Filename)
+	if err != nil {
+		return c.Status(400).JSON(DataResponse{
+			Error:   err.Error(),
+			Success: false,
+			Data:    "",
+		})
+	}
+	defer dst.Close()
+
+	// Copy the uploaded file to the created file on the server
+	if _, err := io.Copy(dst, file); err != nil {
+		return c.Status(400).JSON(DataResponse{
+			Error:   err.Error(),
+			Success: false,
+			Data:    "",
+		})
+	}
+
+	if strings.HasSuffix(handler.Filename, ".csv") {
+		path := filepath.Join("uploads", handler.Filename)
+		err := readCSV(path)
+		if err != nil {
+			return c.Status(400).JSON(DataResponse{
+				Error:   err.Error(),
+				Success: false,
+				Data:    "",
+			})
+		}
+	}
+	return c.SendStatus(200)
+}
+
+func readCSV(filepath string) error {
+	// Open CSV file
+	f, err := os.Open(filepath)
+	if err != nil {
+		fmt.Println("无法打开文件:", err)
+		return err
+	}
+	defer f.Close()
+
+	// Read File into *lines* variable
+	lines, err := csv.NewReader(f).ReadAll()
+	if err != nil {
+		fmt.Println("无法读取CSV文件:", err)
+		return err
+	}
+
+	for index, line := range lines {
+		if index == 0 {
+			continue
+		}
+		id := utils.UUID() //  strings.TrimSpace(line[0])
+		ecode := strings.TrimSpace(line[0])
+		if ecode == "" {
+			break
+		}
+		codata := strings.TrimSpace(line[1])
+		operator := strings.TrimSpace(line[2])
+		waterdata := strings.TrimSpace(line[3])
+		err, _ := database.InsertProdInfo(id, ecode, codata, operator, waterdata)
+		if err != nil {
+			return err
+		}
+		//addressesStr = append(addressesStr, address)
+		//quantities = append(quantities, quantity)
+	}
+	return nil
 }
 
 func addecodata(c *fiber.Ctx) error {
