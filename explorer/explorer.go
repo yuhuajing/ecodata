@@ -7,6 +7,8 @@ import (
 	"github.com/gofiber/fiber/v2/utils"
 	html "github.com/gofiber/template/html/v2"
 	jwt "github.com/golang-jwt/jwt/v5"
+	"golang.org/x/text/encoding/simplifiedchinese"
+	"golang.org/x/text/transform"
 	"io"
 	"log"
 	"main/common/tabletypes"
@@ -45,6 +47,8 @@ func Explorer() {
 	app.Get("/gettxbyhash", gettxbyhash)
 	app.Get("/checkdata", checkdata)
 	app.Get("/checktx", checktx)
+	app.Get("/searchchaindata", searchchaindata)
+
 	app.Post("/upload", upload)
 
 	log.Fatal(app.Listen(":3005"))
@@ -176,11 +180,6 @@ func manageuser(c *fiber.Ctx) error {
 		Identity: resdata.Identity,
 		Approved: resdata.Approved,
 	})
-}
-
-type updatetraceData struct {
-	Id       string `json:"id"`
-	Baseinfo string `json:"baseinfo"`
 }
 
 func giveapprove(c *fiber.Ctx) error {
@@ -323,7 +322,6 @@ func updateAdminUser(c *fiber.Ctx) error {
 }
 
 func upload(c *fiber.Ctx) error {
-
 	// Retrieve the file from the form data
 	handler, err := c.FormFile("file")
 	file, err := handler.Open()
@@ -366,6 +364,7 @@ func upload(c *fiber.Ctx) error {
 	}
 
 	if strings.HasSuffix(handler.Filename, ".csv") {
+		fmt.Println("3453456")
 		path := filepath.Join("uploads", handler.Filename)
 		err := readCSV(path)
 		if err != nil {
@@ -387,9 +386,11 @@ func readCSV(filepath string) error {
 		return err
 	}
 	defer f.Close()
-
+	fmt.Println("READCSV")
+	utf8Reader := transform.NewReader(f, simplifiedchinese.GBK.NewDecoder())
+	r := csv.NewReader(utf8Reader)
 	// Read File into *lines* variable
-	lines, err := csv.NewReader(f).ReadAll()
+	lines, err := r.ReadAll()
 	if err != nil {
 		fmt.Println("无法读取CSV文件:", err)
 		return err
@@ -400,13 +401,13 @@ func readCSV(filepath string) error {
 			continue
 		}
 		id := utils.UUID() //  strings.TrimSpace(line[0])
-		ecode := strings.TrimSpace(line[0])
-		if ecode == "" {
+		waterdata := strings.TrimSpace(line[0])
+		if waterdata == "" {
 			break
 		}
-		codata := strings.TrimSpace(line[1])
-		operator := strings.TrimSpace(line[2])
-		waterdata := strings.TrimSpace(line[3])
+		ecode := strings.TrimSpace(line[1])
+		codata := strings.TrimSpace(line[2])
+		operator := strings.TrimSpace(line[3])
 		err, _ := database.InsertProdInfo(id, ecode, codata, operator, waterdata)
 		if err != nil {
 			return err
@@ -415,6 +416,26 @@ func readCSV(filepath string) error {
 		//quantities = append(quantities, quantity)
 	}
 	return nil
+}
+
+func searchchaindata(c *fiber.Ctx) error {
+	fmt.Println(123)
+	search := c.Query("search")
+	fmt.Println(search)
+	err, resdata := database.QueryChainDataByFileter(search)
+	if err != nil {
+		return c.Status(400).JSON(DataResponse{
+			Error:   err.Error(),
+			Success: false,
+			Data:    "",
+		})
+	}
+	return c.Render("searchData", fiber.Map{"Data": resdata})
+	//return c.Status(200).JSON(DataResponse{
+	//	Error:   "",
+	//	Success: true,
+	//	Data:    hash,
+	//})
 }
 
 func addecodata(c *fiber.Ctx) error {

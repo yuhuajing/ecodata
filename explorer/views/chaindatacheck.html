@@ -9,7 +9,28 @@
     <link rel="stylesheet" href="css/webbase.css">
     <link rel="stylesheet" href="css/center.css">
     <link rel="stylesheet" href="css/pages-seckillrder.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 设置表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        /* 设置表格标题的样式 */
+        th {
+            background-color: #f2f2f2;
+        }
+        /* 设置表格中内容居中 */
+        .center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -62,31 +83,36 @@
         <div class="centerboxR">
             <div class="main order-pay">
                 <div class="body">
-                    <div class="table-title">
-                        <table class="sui-table  order-table">
-                            <tbody><tr>
-                            </tr></tbody><thead>
-                        <tr>
-                            <th width="5%">水质</th>
-                            <th width="5%">二氧化碳</th>
-                            <th width="8%">温度</th>
-                            <th width="10%">追溯码</th>
-                            <th width="10%">操作</th>
-                        </tr></thead>
+<!--                    <div class="table-title">-->
+<!--                        <table class="sui-table  order-table">-->
+<!--                            <tbody><tr>-->
+<!--                            </tr></tbody><thead>-->
+<!--                        <tr>-->
+<!--                            <th width="5%">水质</th>-->
+<!--                            <th width="5%">二氧化碳</th>-->
+<!--                            <th width="8%">温度</th>-->
+<!--                            <th width="10%">追溯码</th>-->
+<!--                            <th width="10%">操作</th>-->
+<!--                        </tr></thead>-->
 
-                        </table>
-                    </div>
+<!--                        </table>-->
+<!--                    </div>-->
                     <div class="order-detail">
                         <div class="choose-title">
-
                         </div>
                         <table class="sui-table table-bordered order-datatable">
+                            <thead>
+                            <tr>
+                                <th width="4%">水质</th>
+                                <th width="4%">二氧化碳</th>
+                                <th width="6%">温度</th>
+                                <th width="18%">ID</th>
+                                <th width="9%">操作</th>
+                            </tr>
+                            </thead>
                             <tbody>
                             {{ range .Data }}
                             <tr>
-                                <td width="5%"  class="center">
-                                    {{ .Waterdata }}
-                                </td>
                                 <td width="5%"  class="center">
                                     {{ .Waterdata }}
                                 </td>

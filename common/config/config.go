@@ -15,6 +15,5 @@ var (
 	Dbname               = "ecotra"
 	DbcollectionUserInfo = "userinfo"
 	DbcollectionEcoInfo  = "ecoinfo"
-	DbcollectionTousu    = "tousu"
 	Mongoclient          *mongo.Client
 )

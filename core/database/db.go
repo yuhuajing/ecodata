@@ -112,6 +112,79 @@ func QueryChainData() (error, []*tabletypes.EcoResData) {
 	}
 	return nil, nil
 }
+
+func QueryChainDataByFileter(filt string) (error, []*tabletypes.EcoResData) {
+	filter1 := bson.M{"id": filt}
+	filter2 := bson.M{"waterdata": filt}
+	filter3 := bson.M{"codata": filt}
+	filter4 := bson.M{"ecodata": filt}
+	filter5 := bson.M{"operator": filt}
+	filter6 := bson.M{"hash": filt}
+	err, idres1 := GetDocuments(config.DbcollectionEcoInfo, filter1, &tabletypes.EcoResData{})
+	if err != nil {
+		return fmt.Errorf("QueryUserInfoByName by id :%s", err), nil
+	}
+	err, idres2 := GetDocuments(config.DbcollectionEcoInfo, filter2, &tabletypes.EcoResData{})
+	if err != nil {
+		return fmt.Errorf("QueryUserInfoByName by waterdata :%s", err), nil
+	}
+	err, idres3 := GetDocuments(config.DbcollectionEcoInfo, filter3, &tabletypes.EcoResData{})
+	if err != nil {
+		return fmt.Errorf("QueryUserInfoByName by codata :%s", err), nil
+	}
+	err, idres4 := GetDocuments(config.DbcollectionEcoInfo, filter4, &tabletypes.EcoResData{})
+	if err != nil {
+		return fmt.Errorf("QueryUserInfoByName by ecodata :%s", err), nil
+	}
+	err, idres5 := GetDocuments(config.DbcollectionEcoInfo, filter5, &tabletypes.EcoResData{})
+	if err != nil {
+		return fmt.Errorf("QueryUserInfoByName by operator :%s", err), nil
+	}
+	err, idres6 := GetDocuments(config.DbcollectionEcoInfo, filter6, &tabletypes.EcoResData{})
+	if err != nil {
+		return fmt.Errorf("QueryUserInfoByName by hash :%s", err), nil
+	}
+	resdata := make([]*tabletypes.EcoResData, 0)
+
+	if len(idres1) != 0 {
+		for _, data := range idres1 {
+			res := data.(*tabletypes.EcoResData)
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	} else if len(idres2) != 0 {
+		for _, data := range idres2 {
+			res := data.(*tabletypes.EcoResData)
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	} else if len(idres3) != 0 {
+		for _, data := range idres3 {
+			res := data.(*tabletypes.EcoResData)
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	} else if len(idres4) != 0 {
+		for _, data := range idres4 {
+			res := data.(*tabletypes.EcoResData)
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	} else if len(idres5) != 0 {
+		for _, data := range idres5 {
+			res := data.(*tabletypes.EcoResData)
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	} else if len(idres6) != 0 {
+		for _, data := range idres6 {
+			res := data.(*tabletypes.EcoResData)
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	}
+	return fmt.Errorf("QueryUserInfoByName err :%s", err), nil
+}
 func QueryUserInfoByName(username string) (error, *tabletypes.UserInfo) {
 	filter := bson.M{"username": username}
 	var res *tabletypes.UserInfo

@@ -9,7 +9,28 @@
     <link rel="stylesheet" href="css/webbase.css">
     <link rel="stylesheet" href="css/center.css">
     <link rel="stylesheet" href="css/pages-seckillrder.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 设置表格样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        /* 设置表格标题的样式 */
+        th {
+            background-color: #f2f2f2;
+        }
+        /* 设置表格中内容居中 */
+        .center {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -79,28 +100,27 @@
         <div class="centerboxR">
             <div class="main order-pay">
                 <div class="body">
-                    <div class="table-title">
-                        <table class="sui-table  order-table">
-                            <tbody><tr>
-                            </tr></tbody><thead>
-                        <tr><th width="11%">ID</th>
-                            <th width="6%">水质</th>
-                            <th width="5%">二氧化碳</th>
-                            <th width="6%">温度</th>
-                            <th width="10%">操作人</th>
-                            <th width="20%">Hash</th>
-                            <th width="10%">操作</th>
-                        </tr></thead>
 
-                        </table>
+
+                    <div>
+                        <form method="GET" action="/searchchaindata" class="sui-form form-horizontal" onsubmit="submitFormSearchChain(event)">
+                        <input type="text" id="search" class="inputbox" placeholder="请输入你要搜索的关键字">
+                            <p><span> <input type="submit" value="搜索" /></span></p>
+                        </form>
                     </div>
+
                     <div class="order-detail">
-                        <div class="choose-title">
-                            <label data-toggle="checkbox" class="checkbox-pretty ">
-                                <input type="checkbox" checked="checked"><span>全部用户</span>
-                            </label>
-                        </div>
                         <table class="sui-table table-bordered order-datatable">
+                            <thead>
+                            <tr><th width="18%">ID</th>
+                                <th width="5%">水质</th>
+                                <th width="4%">二氧化碳</th>
+                                <th width="6%">温度</th>
+                                <th width="4%">操作人</th>
+                                <th width="35%">Hash</th>
+                                <th width="9%">操作</th>
+                            </tr>
+                            </thead>
                             <tbody>
                             {{ range .Data }}
                             <tr>
@@ -225,6 +245,26 @@
     </div>
 </div>
 <div style="background: #acacac">
+
+    <script>
+        function submitFormSearchChain(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+
+            // 获取表单元素的值
+            var form = event.target;
+            // var formData = new FormData(form);
+
+            // 在此处进行其他表单数据处理或验证
+            var searchValue = document.getElementById("search").value;
+            // 发起 POST 请求
+            var url = "/searchchaindata?search=" + encodeURIComponent(searchValue);
+            window.location.href = url
+            // fetch(url, {
+            //     method: 'GET',
+            //     // 可以根据需要设置请求头等其他参数
+            // })
+        }
+    </script>
 
 <script>
     function submitFormDelChain(event) {

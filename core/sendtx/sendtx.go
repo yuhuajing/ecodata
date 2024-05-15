@@ -1,21 +1,21 @@
 package sendtx
 
-import "C"
 import (
 	"context"
 	"crypto/ecdsa"
 	"fmt"
-	"github.com/ethereum/go-ethereum/accounts/abi/bind"
-	"github.com/ethereum/go-ethereum/common"
-	"github.com/ethereum/go-ethereum/crypto"
 	"log"
 	"main/common/config"
 	"main/trace"
 	"math/big"
+
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/crypto"
 )
 
 func gentx(gaslimit uint64) *bind.TransactOpts {
-	privateKey, err := crypto.HexToECDSA("ea2e4985f8ca655cef87a12ccd04a3aee166644d140cf97e1f515b242873a289")
+	privateKey, err := crypto.HexToECDSA("799bae9074c08e5445fa20f6a4b104ece28933d4dd4241f1fc89e35a335af17d")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -49,7 +49,7 @@ func AddOrUpdateProdData(id string, ecode string, codata string, operator string
 	if err != nil {
 		log.Fatalf("error creating nftcallerinstance instance:%s", err)
 	}
-	auth := gentx(3000000)
+	auth := gentx(200000)
 	tx, err := instance.AddOrupdateProdData(auth, id, ecode, codata, operator, waterdata)
 	if err != nil {
 		fmt.Println("error creating instance")

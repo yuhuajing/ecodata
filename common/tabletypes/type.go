@@ -60,6 +60,9 @@ type EcoData struct {
 	Operator  string `json:"operator"`
 }
 
+type Search struct {
+	Search string `json:"search"`
+}
 type EcoResData struct {
 	Id        string `json:"id"`
 	Waterdata string `json:"waterdata"`
