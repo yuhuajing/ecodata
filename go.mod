@@ -9,6 +9,7 @@ require (
 	github.com/golang-jwt/jwt/v5 v5.2.1
 	github.com/google/uuid v1.5.0
 	go.mongodb.org/mongo-driver v1.14.0
+	golang.org/x/text v0.14.0
 )
 
 require (
@@ -54,7 +55,6 @@ require (
 	golang.org/x/mod v0.14.0 // indirect
 	golang.org/x/sync v0.5.0 // indirect
 	golang.org/x/sys v0.16.0 // indirect
-	golang.org/x/text v0.14.0 // indirect
 	golang.org/x/tools v0.15.0 // indirect
 	rsc.io/tmplfunc v0.0.3 // indirect
 )

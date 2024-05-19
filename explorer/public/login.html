@@ -100,12 +100,12 @@
                                                 response.json().then(function(data) {
                                                     console.log(data)
                                                    //var queryParams = new URLSearchParams(data).toString();
-                                                    localStorage.setItem('aname', data.username);
-                                                    localStorage.setItem('aid', data.id);
-                                                    localStorage.setItem('aemail', data.email);
-                                                    localStorage.setItem('aphone', data.phone);
-                                                    localStorage.setItem('aidentity', data.identity);
-                                                    localStorage.setItem('aapprove', data.approved);
+                                                    localStorage.setItem('name', data.username);
+                                                    localStorage.setItem('id', data.id);
+                                                    localStorage.setItem('email', data.email);
+                                                    localStorage.setItem('phone', data.phone);
+                                                    localStorage.setItem('identity', data.identity);
+                                                    localStorage.setItem('approve', data.approved);
                                                   window.location.href = "/adminfuncs.html";//?"+queryParams;
                                                 });
                                             }
@@ -119,12 +119,12 @@
                                             if (response.ok) {
                                                 response.json().then(function(data) {
                                                     // var queryParams = new URLSearchParams(data).toString();
-                                                    localStorage.setItem('uname', data.username);
-                                                    localStorage.setItem('uid', data.id);
-                                                    localStorage.setItem('uemail', data.email);
-                                                    localStorage.setItem('uphone', data.phone);
-                                                    localStorage.setItem('uidentity', data.identity);
-                                                    localStorage.setItem('uapprove', data.approved);
+                                                    localStorage.setItem('name', data.username);
+                                                    localStorage.setItem('id', data.id);
+                                                    localStorage.setItem('email', data.email);
+                                                    localStorage.setItem('phone', data.phone);
+                                                    localStorage.setItem('identity', data.identity);
+                                                    localStorage.setItem('approve', data.approved);
                                                     window.location.href = "/tracedata.html";//?"+queryParams;
                                                 });
                                             }

@@ -55,14 +55,18 @@ func Explorer() {
 }
 
 func getchaindatauser(c *fiber.Ctx) error {
-	_, resdata := database.QueryChainData()
+	//fmt.Println(123)
+	name := c.Query("username")
+	//fmt.Println(name)
+	_, resdata := database.QueryUserChainData(name)
 	return c.Render("chaindatauser", fiber.Map{
 		"Data": resdata,
 	})
 }
 
 func checkdata(c *fiber.Ctx) error {
-	_, resdata := database.QueryChainData()
+	name := c.Query("username")
+	_, resdata := database.QueryUserChainData(name)
 	return c.Render("chaindatacheck", fiber.Map{
 		"Data": resdata,
 	})

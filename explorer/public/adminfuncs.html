@@ -76,23 +76,38 @@
         <div class="centerboxR">
             <div class="main order-pay">
                 <div class="body">
-                    <div class="table-title">
-                        <table class="sui-table  order-table">
-                            <tbody><tr>
-                            </tr></tbody><thead>
-                        <tr><th width="35%">用户ID</th>
-                            <th width="5%">用户名</th>
-                            <th width="5%">Email</th>
-                            <th width="8%">Phone</th>
-                            <th width="10%">身份</th>
-                            <th width="10%">授权信息</th>
-                            <th width="10%">操作</th>
-                        </tr></thead>
+<!--                    <div class="table-title">-->
+<!--                        <table class="sui-table  order-table">-->
+<!--                            <tbody><tr>-->
+<!--                            </tr></tbody>-->
+<!--                            -->
+<!--                            <thead>-->
+<!--                        <tr><th width="35%">用户ID</th>-->
+<!--                            <th width="5%">用户名</th>-->
+<!--                            <th width="5%">Email</th>-->
+<!--                            <th width="8%">Phone</th>-->
+<!--                            <th width="10%">身份</th>-->
+<!--                            <th width="10%">授权信息</th>-->
+<!--                            <th width="10%">操作</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
 
-                        </table>
-                    </div>
+<!--                        </table>-->
+<!--                    </div>-->
                     <div class="order-detail">
                         <table class="sui-table table-bordered order-datatable">
+                            <thead>
+                            <tr>
+                                <th width="18%">ID</th>
+                                <th width="5%">用户名</th>
+                                <th width="4%">邮箱</th>
+                                <th width="6%">电话号码</th>
+                                <th width="4%">身份</th>
+                                <th width="5%">授权信息</th>
+<!--                                <th width="9%">操作</th>-->
+                            </tr>
+                            </thead>
+
                             <tbody>
                             <!--                                {{ range .Data }}-->
                             <tr>
@@ -114,13 +129,13 @@
                                 <td width="10%" id="approved"  class="center">
                                     <!--                                        {{ .Data.Approved }}-->
                                 </td>
-                                <td width="10%" class="center">
-                                    <!--                                        <ul class="unstyled">-->
-                                    <!--                                            <li><form method="POST" action="/removeapprove?id={{ .Id }}" class="sui-form form-horizontal" onsubmit="submitForm(event)">-->
-                                    <!--                                                <p><span> <input type="submit" value="删除用户" /></span></p>-->
-                                    <!--                                            </form></li>-->
-                                    <!--                                        </ul>-->
-                                </td>
+<!--                                <td width="10%" class="center">-->
+<!--                                    &lt;!&ndash;                                        <ul class="unstyled">&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                            <li><form method="POST" action="/removeapprove?id={{ .Id }}" class="sui-form form-horizontal" onsubmit="submitForm(event)">&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                                <p><span> <input type="submit" value="删除用户" /></span></p>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                            </form></li>&ndash;&gt;-->
+<!--                                    &lt;!&ndash;                                        </ul>&ndash;&gt;-->
+<!--                                </td>-->
                             </tr>
                             <!--                                {{ end }}-->
                             </tbody>
@@ -225,24 +240,24 @@
 
 <script>
 
-    // localStorage.setItem('aname', data.username);
-    // localStorage.setItem('aid', data.id);
-    // localStorage.setItem('aemail', data.email);
-    // localStorage.setItem('aphone', data.phone);
-    // localStorage.setItem('aidentity', data.identity);
-    // localStorage.setItem('aapprove', data.approved);
+    // localStorage.setItem('name', data.username);
+    // localStorage.setItem('id', data.id);
+    // localStorage.setItem('email', data.email);
+    // localStorage.setItem('phone', data.phone);
+    // localStorage.setItem('identity', data.identity);
+    // localStorage.setItem('approve', data.approved);
 
     // 从 URL 中解析查询参数
     // var queryParams = new URLSearchParams(window.location.search);
     // console.log("URL Parameters:", window.location.search);
     console.log(222)
-    console.log(localStorage.getItem('aid'))
-    var tuserid = localStorage.getItem('aid');//queryParams.get('id');
-    var tusername = localStorage.getItem('aname');//queryParams.get('username');
-    var temail = localStorage.getItem('aemail');//queryParams.get('email');
-    var tphone = localStorage.getItem('aphone');//queryParams.get('phone');
-    var identity = localStorage.getItem('aidentity');//queryParams.get('identity');
-    var approved = localStorage.getItem('aapprove');//queryParams.get('approved');
+    console.log(localStorage.getItem('id'))
+    var tuserid = localStorage.getItem('id');//queryParams.get('id');
+    var tusername = localStorage.getItem('name');//queryParams.get('username');
+    var temail = localStorage.getItem('email');//queryParams.get('email');
+    var tphone = localStorage.getItem('phone');//queryParams.get('phone');
+    var identity = localStorage.getItem('identity');//queryParams.get('identity');
+    var approved = localStorage.getItem('approve');//queryParams.get('approved');
     // 在页面上展示数据
     document.getElementById('userid').textContent = decodeURIComponent(tuserid);
     document.getElementById('username').textContent = decodeURIComponent(tusername);

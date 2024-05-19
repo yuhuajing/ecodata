@@ -242,24 +242,24 @@
 
 <script>
 
-    // localStorage.setItem('aname', data.username);
-    // localStorage.setItem('aid', data.id);
-    // localStorage.setItem('aemail', data.email);
-    // localStorage.setItem('aphone', data.phone);
-    // localStorage.setItem('aidentity', data.identity);
-    // localStorage.setItem('aapprove', data.approved);
+    // localStorage.setItem('name', data.username);
+    // localStorage.setItem('id', data.id);
+    // localStorage.setItem('email', data.email);
+    // localStorage.setItem('phone', data.phone);
+    // localStorage.setItem('identity', data.identity);
+    // localStorage.setItem('approve', data.approved);
 
     // 从 URL 中解析查询参数
     // var queryParams = new URLSearchParams(window.location.search);
     // console.log("URL Parameters:", window.location.search);
     console.log(222)
-    console.log(localStorage.getItem('aid'))
-    var tuserid = localStorage.getItem('aid');//queryParams.get('id');
-    var tusername = localStorage.getItem('aname');//queryParams.get('username');
-    var temail = localStorage.getItem('aemail');//queryParams.get('email');
-    var tphone = localStorage.getItem('aphone');//queryParams.get('phone');
-    var identity = localStorage.getItem('aidentity');//queryParams.get('identity');
-    var approved = localStorage.getItem('aapprove');//queryParams.get('approved');
+    console.log(localStorage.getItem('id'))
+    var tuserid = localStorage.getItem('id');//queryParams.get('id');
+    var tusername = localStorage.getItem('name');//queryParams.get('username');
+    var temail = localStorage.getItem('email');//queryParams.get('email');
+    var tphone = localStorage.getItem('phone');//queryParams.get('phone');
+    var identity = localStorage.getItem('identity');//queryParams.get('identity');
+    var approved = localStorage.getItem('approve');//queryParams.get('approved');
     // 在页面上展示数据
     document.getElementById('userid').textContent = decodeURIComponent(tuserid);
     document.getElementById('username').textContent = decodeURIComponent(tusername);

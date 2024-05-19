@@ -55,7 +55,7 @@
                 <p>数据管理</p>
                 <li>
                     <a href="/getchaindatauser">查看数据</a>
-                    <a href="/checkdata">校验数据</a>
+                    <a href="/tracedata.html">校验数据</a>
                 </li>
             </ul>
         </div>
@@ -84,22 +84,23 @@
 
                         <table class="sui-table table-bordered order-datatable">
                             <thead>
-                            <tr><th width="18%">ID</th>
+                            <tr>
+<!--                                <th width="18%">ID</th>-->
                                 <th width="5%">水质</th>
                                 <th width="4%">二氧化碳</th>
                                 <th width="6%">温度</th>
                                 <th width="4%">操作人</th>
-                                <th width="35%">Hash</th>
+                                <th width="35%">区块链交易Hash</th>
                                 <th width="9%">操作</th>
                             </tr>
                             </thead>
                             <tbody>
                             {{ range .Data }}
                             <tr>
-                                <td width="35%">
-                                    <span  class="guige"> </span>
-                                    {{ .Id }}
-                                </td>
+<!--                                <td width="35%">-->
+<!--                                    <span  class="guige"> </span>-->
+<!--                                    {{ .Id }}-->
+<!--                                </td>-->
                                 <td width="5%"  class="center">
                                     {{ .Waterdata }}
                                 </td>
@@ -210,6 +211,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    // 获取存储在 localStorage 中的 name 值
+    var name = localStorage.getItem('name');
+    console.log(12334333)
+    console.log(name)
+    // 查找 <a> 元素
+    var anchorElement = document.querySelector('a[href="/getchaindatauser"]');
+
+    // 修改 href 属性
+    anchorElement.href = anchorElement.href + '?username=' + name;
+</script>
+
 
     <script>
         function submitFormSearchChain(event) {

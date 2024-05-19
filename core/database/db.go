@@ -2,6 +2,8 @@ package database
 
 import (
 	"context"
+	"crypto/sha256"
+	"encoding/hex"
 	"fmt"
 	"github.com/gofiber/fiber/v2/utils"
 	"github.com/google/uuid"
@@ -94,6 +96,26 @@ func QueryAllUserInfo() (error, []*tabletypes.UserInfo) {
 	}
 	return nil, nil
 }
+func QueryUserChainData(username string) (error, []*tabletypes.EcoResData) {
+	filter := bson.M{}
+	err, idres := GetDocuments(config.DbcollectionEcoInfo, filter, &tabletypes.EcoResData{})
+	if err != nil {
+		fmt.Println(err)
+		return fmt.Errorf("QueryChainData err : %s", err), nil
+	}
+	if len(idres) != 0 {
+		resdata := make([]*tabletypes.EcoResData, 0)
+		for _, data := range idres {
+			res := data.(*tabletypes.EcoResData)
+			if res.Operator != username {
+				res = encryData(res)
+			}
+			resdata = append(resdata, res)
+		}
+		return nil, resdata
+	}
+	return nil, nil
+}
 
 func QueryChainData() (error, []*tabletypes.EcoResData) {
 	filter := bson.M{}
@@ -106,11 +128,36 @@ func QueryChainData() (error, []*tabletypes.EcoResData) {
 		resdata := make([]*tabletypes.EcoResData, 0)
 		for _, data := range idres {
 			res := data.(*tabletypes.EcoResData)
-			resdata = append(resdata, res)
+			newRes := encryData(res)
+			resdata = append(resdata, newRes)
 		}
 		return nil, resdata
 	}
 	return nil, nil
+}
+
+func encryData(ecoData *tabletypes.EcoResData) *tabletypes.EcoResData {
+	id := sha256.Sum256([]byte(ecoData.Id))
+	idHash := hex.EncodeToString(id[:])[:10]
+	Waterdata := sha256.Sum256([]byte(ecoData.Waterdata))
+	WaterdataHash := hex.EncodeToString(Waterdata[:])[:10]
+	Codata := sha256.Sum256([]byte(ecoData.Codata))
+	CodataHash := hex.EncodeToString(Codata[:])[:10]
+	Ecodata := sha256.Sum256([]byte(ecoData.Ecodata))
+	EcodataHash := hex.EncodeToString(Ecodata[:])[:10]
+	Operator := sha256.Sum256([]byte(ecoData.Operator))
+	OperatorHash := hex.EncodeToString(Operator[:])[:10]
+	Hash := sha256.Sum256([]byte(ecoData.Hash))
+	HashHash := hex.EncodeToString(Hash[:])[:10]
+	newEcoData := &tabletypes.EcoResData{
+		Id:        idHash,
+		Waterdata: WaterdataHash,
+		Codata:    CodataHash,
+		Ecodata:   EcodataHash,
+		Operator:  OperatorHash,
+		Hash:      HashHash,
+	}
+	return newEcoData
 }
 
 func QueryChainDataByFileter(filt string) (error, []*tabletypes.EcoResData) {

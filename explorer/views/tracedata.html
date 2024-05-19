@@ -72,7 +72,7 @@
                 <p>数据管理</p>
                 <li>
                     <a href="/getchaindatauser">查看数据</a>
-                    <a href="/checkdata">校验数据</a>
+                    <a href="/tracedata.html">校验数据</a>
                 </li>
             </ul>
         </div>
@@ -218,6 +218,17 @@
 </div>
 <div style="background: #acacac">
     <script>
+        // 获取存储在 localStorage 中的 name 值
+        var name = localStorage.getItem('name');
+        console.log(12334333)
+        console.log(name)
+        // 查找 <a> 元素
+        var anchorElement = document.querySelector('a[href="/getchaindatauser"]');
+
+        // 修改 href 属性
+        anchorElement.href = anchorElement.href + '?username=' + name;
+    </script>
+    <script>
         var puser =  localStorage.getItem('user');
         // 从 URL 中解析查询参数
         // var queryParams = new URLSearchParams(window.location.search);
@@ -228,12 +239,12 @@
 
     <script>
         // 从 URL 中解析查询参数
-        var tuserid = localStorage.getItem('uid');//queryParams.get('id');
-        var tusername = localStorage.getItem('uname');//queryParams.get('username');
-        var temail = localStorage.getItem('uemail');//queryParams.get('email');
-        var tphone = localStorage.getItem('uphone');//queryParams.get('phone');
-        var identity = localStorage.getItem('uidentity');//queryParams.get('identity');
-        var approved = localStorage.getItem('uapprove');//queryParams.get('approved');
+        var tuserid = localStorage.getItem('id');//queryParams.get('id');
+        var tusername = localStorage.getItem('name');//queryParams.get('username');
+        var temail = localStorage.getItem('email');//queryParams.get('email');
+        var tphone = localStorage.getItem('phone');//queryParams.get('phone');
+        var identity = localStorage.getItem('identity');//queryParams.get('identity');
+        var approved = localStorage.getItem('approve');//queryParams.get('approved');
         // 在页面上展示数据
         document.getElementById('userid').textContent = decodeURIComponent(tuserid);
         document.getElementById('username').textContent = decodeURIComponent(tusername);
